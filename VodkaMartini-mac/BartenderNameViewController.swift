@@ -15,20 +15,6 @@ class BartenderNameViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-//        
-//        let openPanel = NSOpenPanel()
-//        openPanel.allowsMultipleSelection = false
-//        openPanel.canChooseDirectories = false
-//        openPanel.canCreateDirectories = false
-//        openPanel.canChooseFiles = true
-//        openPanel.allowedFileTypes = ["mp4"]
-//        openPanel.title = "Menu"
-//        openPanel.message = "Select what you want to drink (or listen to)."
-//        let i = openPanel.runModal()
-//        if(i == NSFileHandlingPanelOKButton){
-//            print(openPanel.url)
-//            
-//        }
     }
     
 }

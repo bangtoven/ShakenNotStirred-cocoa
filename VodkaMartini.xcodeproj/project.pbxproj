@@ -25,6 +25,10 @@
 		73167DAD1E08CE9A00840E86 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DAC1E08CE9A00840E86 /* Order.swift */; };
 		73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */; };
 		73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DB41E08E31800840E86 /* BartenderNameViewController.swift */; };
+		73167DB71E08FB8400840E86 /* vodkamartini-video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 73167DB61E08FB8400840E86 /* vodkamartini-video.mov */; };
+		73167DB91E09048000840E86 /* FileSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DB81E09048000840E86 /* FileSelectViewController.swift */; };
+		73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBA1E09154300840E86 /* ListenSampleViewController.swift */; };
+		73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBC1E09155400840E86 /* FinishOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		73167DAC1E08CE9A00840E86 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichJBViewController.swift; sourceTree = "<group>"; };
 		73167DB41E08E31800840E86 /* BartenderNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartenderNameViewController.swift; sourceTree = "<group>"; };
+		73167DB61E08FB8400840E86 /* vodkamartini-video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "vodkamartini-video.mov"; sourceTree = "<group>"; };
+		73167DB81E09048000840E86 /* FileSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectViewController.swift; sourceTree = "<group>"; };
+		73167DBA1E09154300840E86 /* ListenSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenSampleViewController.swift; sourceTree = "<group>"; };
+		73167DBC1E09155400840E86 /* FinishOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderViewController.swift; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				73167DA41E08C6AC00840E86 /* master.stem.mp4 */,
+				73167DB61E08FB8400840E86 /* vodkamartini-video.mov */,
 				73167DA71E08CDE000840E86 /* main */,
 				73167DA81E08CDEC00840E86 /* models */,
 				73167DAB1E08CE3700840E86 /* controllers */,
@@ -152,9 +161,12 @@
 		73167DAB1E08CE3700840E86 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				73167D8E1E08C6A000840E86 /* ViewController.swift */,
 				73167DB41E08E31800840E86 /* BartenderNameViewController.swift */,
 				73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */,
+				73167DB81E09048000840E86 /* FileSelectViewController.swift */,
+				73167DBA1E09154300840E86 /* ListenSampleViewController.swift */,
+				73167DBC1E09155400840E86 /* FinishOrderViewController.swift */,
+				73167D8E1E08C6A000840E86 /* ViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -235,6 +247,7 @@
 				73167D9F1E08C6A000840E86 /* GlassView.xib in Resources */,
 				73167DA51E08C6AC00840E86 /* master.stem.mp4 in Resources */,
 				73167DA31E08C6A000840E86 /* Main.storyboard in Resources */,
+				73167DB71E08FB8400840E86 /* vodkamartini-video.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,13 +310,16 @@
 				73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */,
 				73167DAD1E08CE9A00840E86 /* Order.swift in Sources */,
 				73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */,
+				73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */,
 				73167D9E1E08C6A000840E86 /* ReplaceSegue.swift in Sources */,
 				73167D981E08C6A000840E86 /* AppDelegate.swift in Sources */,
 				73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */,
 				73167D991E08C6A000840E86 /* WindowController.swift in Sources */,
+				73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */,
 				73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */,
 				73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */,
 				73167DA01E08C6A000840E86 /* GlassView.swift in Sources */,
+				73167DB91E09048000840E86 /* FileSelectViewController.swift in Sources */,
 				73167DA21E08C6A000840E86 /* BottlesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

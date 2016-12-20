@@ -16,6 +16,7 @@ class WhichJBViewController: NSViewController {
     }
     
     @IBAction func buttonAction(_ sender: NSButton) {
+        self.performSegue(withIdentifier: "replace", sender: nil)
     }
     
 }

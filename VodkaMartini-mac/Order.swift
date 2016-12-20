@@ -9,6 +9,8 @@
 import Foundation
 
 class Order {
+    static var currentOrder: Order?
+    
     var bartenderName: String?
     var resultMix: [Float] = [0,0,0,0]
     

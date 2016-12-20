@@ -27,7 +27,6 @@ class ViewController: NSViewController, ArduinoInterfaceDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ArduinoInterface.sharedInstance.runProcessingInput()
         ArduinoInterface.sharedInstance.delegate = self
         
         sliders = [slider0, slider1, slider2, slider3]
@@ -73,6 +72,8 @@ class ViewController: NSViewController, ArduinoInterfaceDelegate {
     
     func arduinoInterface(ai: ArduinoInterface, newState: HolderState) {
         self.currentState = newState
+        
+        bottlesView.updateWith(state: newState)
     }
     
     func arduinoInterface(ai: ArduinoInterface, newWeight: Int) {
@@ -144,7 +145,7 @@ class ViewController: NSViewController, ArduinoInterfaceDelegate {
         self.glassView.fillRatio = CGFloat(volume)
         
         
-        bottlesView.updateWith(state: HolderState(rawValue: Int16(sender.tag))!)
+        
         
 //        if let wc = self.view.window?.windowController as? WindowController {
 //            wc.afafafaf()

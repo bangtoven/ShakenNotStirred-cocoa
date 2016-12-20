@@ -28,10 +28,12 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
     
     static let sharedInstance = ArduinoInterface()
     
-    func runProcessingInput() {
+    override init() {
+        super.init()
+        
         setbuf(stdout, nil)
         
-        self.serialPort = ORSSerialPort(path: "/dev/cu.usbmodem1411")
+        self.serialPort = ORSSerialPort(path: "/dev/cu.usbmodem1421")
         self.serialPort?.baudRate = 9600
         self.serialPort?.delegate = self
         
@@ -41,13 +43,6 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
         let desc = ORSSerialPacketDescriptor(prefixString: "strt", suffixString: "fnsh", maximumPacketLength: 20, userInfo: nil)
         serialPort?.startListeningForPackets(matching: desc)
     }
-    
-    // false = READY, true = PLAYING
-//    var gameState = false
-//    
-//    var lastRoll : Float = -1.0
-//    var swingCount = 0
-//    var message = ""
     
     var holderState: HolderState = .Error
     var weight: Int16 = 0
@@ -65,48 +60,6 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
         let weight = data[1]
         self.weight = weight
         self.delegate?.arduinoInterface(ai: self, newWeight: Int(weight))
-        
-//        switch holderState {
-//        case .All, .Error:
-//            break
-//        default:
-//            let index = Int(holderState.rawValue)
-//            var out:[UInt8] = [0, 0, 0]
-//            out[index] = UInt8(weight/12)
-//            sendDataToSerial(data: out)
-//        }
-//        
-        
-//        delegate?.arduinoInterface(ai: self, newAccel: accel)
-//        
-//        let currRoll = data[11]
-//        if accel > 2 && lastRoll > 0 && currRoll < 0 { // detect zero-crossing
-//            swingCount += 1
-//            delegate?.arduinoInterface(ai: self, newSwingCount: swingCount)
-//        }
-//        lastRoll = currRoll
-        
-        
-//        // Send back data to Arduino
-//        var state: [UInt8] = [gameState ? 1 : 0]
-//        sendDataToSerial(data: &state)
-//        
-//        var led: [UInt8] = (accel > 4) ? [1,0] : [0, 1] // Turn red or green
-//        sendDataToSerial(data: &led)
-//        
-//        var frequency: [UInt8]
-//        if accel > -16.0 || accel < 16.0 { // in normal range
-//            let freq = (UInt16)(400.0 + 30.0*accel) // frequency according to the accel
-//            frequency = [(UInt8)(freq >> 8),
-//                         (UInt8)(freq % 256)]
-//        } else {
-//            frequency = [0,0]
-//        }
-//        sendDataToSerial(data: &frequency)
-//        
-//        if let str = self.message.appending(".").data(using: String.Encoding.ascii) {
-//            self.serialPort?.send(str)
-//        }
     }
     
     func sendColorToSerial(color: NSColor) {

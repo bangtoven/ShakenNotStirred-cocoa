@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -195,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-Yc-hHe">
-                                <rect key="frame" x="24" y="35" width="339" height="29"/>
+                                <rect key="frame" x="-8" y="17" width="402" height="29"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="name" drawsBackground="YES" id="TMx-fk-OlA">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -203,18 +204,19 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Nt-Yr-ioN">
-                                <rect key="frame" x="22" y="96" width="408" height="108"/>
+                                <rect key="frame" x="-10" y="78" width="471" height="144"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="" id="VPn-LD-9GB">
                                     <font key="font" metaFont="system" size="30"/>
                                     <string key="title">Hi, there.
-So, you are the new bartender.
+You are the new bartender, then.
+Or should we call you a mixologist?
 Tell us your name.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5AG-hH-JO2">
-                                <rect key="frame" x="365" y="32" width="69" height="32"/>
+                                <rect key="frame" x="396" y="14" width="69" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="nLJ-Po-fOp"/>
                                 </constraints>
@@ -245,18 +247,110 @@ Tell us your name.</string>
             </objects>
             <point key="canvasLocation" x="-794" y="275"/>
         </scene>
-        <!--View Controller-->
+        <!--File Select View Controller-->
         <scene sceneID="buL-jF-2xY">
             <objects>
-                <viewController id="efP-ik-3W4" sceneMemberID="viewController">
+                <viewController id="efP-ik-3W4" customClass="FileSelectViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="nQO-Zl-BWx">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="485"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-aR-leJ">
+                                <rect key="frame" x="-95" y="63" width="640" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="640" id="NjY-ce-Btz"/>
+                                    <constraint firstAttribute="height" constant="360" id="kDp-zI-0XB"/>
+                                </constraints>
+                            </avPlayerView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N10-Ne-8yt">
+                                <rect key="frame" x="50" y="431" width="350" height="36"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Vodka martini, as always?" id="gsP-Jh-x0y">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7od-7L-7dm">
+                                <rect key="frame" x="163" y="15" width="125" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start an order" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YSM-UI-e8o">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="makeAnOrder:" target="efP-ik-3W4" id="MEf-WO-PkW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="centerY" secondItem="nQO-Zl-BWx" secondAttribute="centerY" id="7Fk-RT-EYe"/>
+                            <constraint firstItem="7od-7L-7dm" firstAttribute="centerX" secondItem="0Bo-aR-leJ" secondAttribute="centerX" id="KqZ-cf-R5J"/>
+                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="top" secondItem="N10-Ne-8yt" secondAttribute="bottom" constant="8" id="M13-J9-RyJ"/>
+                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="centerX" secondItem="nQO-Zl-BWx" secondAttribute="centerX" id="MDC-ue-YTQ"/>
+                            <constraint firstItem="7od-7L-7dm" firstAttribute="top" secondItem="0Bo-aR-leJ" secondAttribute="bottom" constant="20" id="Yo9-Ll-CAe"/>
+                            <constraint firstItem="N10-Ne-8yt" firstAttribute="centerX" secondItem="nQO-Zl-BWx" secondAttribute="centerX" id="bo5-0P-rem"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerView" destination="0Bo-aR-leJ" id="MDp-pf-kNc"/>
+                        <segue destination="yai-xJ-rfU" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="h6y-No-SGY"/>
+                    </connections>
                 </viewController>
                 <customObject id="P9a-gv-yWZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="683"/>
+            <point key="canvasLocation" x="-795" y="956.5"/>
+        </scene>
+        <!--Listen Sample View Controller-->
+        <scene sceneID="0j6-sF-S71">
+            <objects>
+                <viewController id="yai-xJ-rfU" customClass="ListenSampleViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ojG-gZ-PhV">
+                        <rect key="frame" x="0.0" y="0.0" width="458" height="502"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="bPM-me-vJe" customClass="BottlesView" customModule="VodkaMartini" customModuleProvider="target">
+                                <rect key="frame" x="79" y="101" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="lQa-jW-qdK"/>
+                                    <constraint firstAttribute="width" constant="300" id="yYe-hD-dbb"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="erU-cN-lZR">
+                                <rect key="frame" x="9" y="409" width="440" height="72"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="vL6-7n-8VB">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <string key="title">Pick up one bottle at a time,
+and listend to how it sounds like.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XCm-HX-cEe">
+                                <rect key="frame" x="195" y="53" width="69" height="32"/>
+                                <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jwH-g1-4cu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="LSv-iT-Ukf" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="i5Z-a6-E5F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XCm-HX-cEe" firstAttribute="top" secondItem="bPM-me-vJe" secondAttribute="bottom" constant="20" id="0Cg-10-uFQ"/>
+                            <constraint firstItem="erU-cN-lZR" firstAttribute="centerX" secondItem="ojG-gZ-PhV" secondAttribute="centerX" id="7dU-U0-K1R"/>
+                            <constraint firstItem="XCm-HX-cEe" firstAttribute="centerX" secondItem="ojG-gZ-PhV" secondAttribute="centerX" id="Ins-Zc-SDy"/>
+                            <constraint firstItem="bPM-me-vJe" firstAttribute="centerX" secondItem="ojG-gZ-PhV" secondAttribute="centerX" id="ePz-CA-tCM"/>
+                            <constraint firstItem="bPM-me-vJe" firstAttribute="top" secondItem="erU-cN-lZR" secondAttribute="bottom" constant="8" id="xjx-wN-DeH"/>
+                            <constraint firstItem="bPM-me-vJe" firstAttribute="centerY" secondItem="ojG-gZ-PhV" secondAttribute="centerY" id="y5b-SZ-bGK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottlesView" destination="bPM-me-vJe" id="Xqe-W9-I29"/>
+                    </connections>
+                </viewController>
+                <customObject id="JRD-Wq-4md" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="956"/>
         </scene>
         <!--ViewController-->
         <scene sceneID="hIz-AP-VOD">
@@ -344,7 +438,7 @@ Tell us your name.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="1325"/>
+            <point key="canvasLocation" x="1542" y="1038"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4O-98-w3P">
@@ -355,10 +449,13 @@ Tell us your name.</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4xY-LJ-HV4">
-                                <rect key="frame" x="-151" y="60" width="753" height="180"/>
+                                <rect key="frame" x="-153" y="50" width="757" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Xvp-rF-g1J"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="eh1-cw-pU8">
                                     <font key="font" metaFont="system" size="30"/>
-                                    <string key="title">Your mission is to make the mix as your customers want.
+                                    <string key="title">Your mission is to make the MIX as your customers want.
 Remember they are fastidious about the vodka martini, 
 and some of them have licesnse to kill. 😱
 
@@ -368,7 +465,7 @@ Now, pass this laptop to the customer and wait.</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sfb-Un-Ard">
-                                <rect key="frame" x="191" y="24" width="69" height="32"/>
+                                <rect key="frame" x="191" y="14" width="69" height="32"/>
                                 <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ndr-uZ-Yxx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -399,7 +496,10 @@ Now, pass this laptop to the customer and wait.</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-JD-0yr">
-                                <rect key="frame" x="-15" y="114" width="482" height="72"/>
+                                <rect key="frame" x="-15" y="50" width="482" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="guU-Ip-Lz2"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="nYO-Bx-vuH">
                                     <font key="font" metaFont="system" size="30"/>
                                     <string key="title">Hello, agent JB.
@@ -409,7 +509,7 @@ Anyway, what is your name exactly?</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r4m-Bs-0pM">
-                                <rect key="frame" x="191" y="78" width="69" height="32"/>
+                                <rect key="frame" x="191" y="14" width="69" height="32"/>
                                 <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ro2-ML-fdZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -430,6 +530,103 @@ Anyway, what is your name exactly?</string>
                 <customObject id="c5G-fz-GI4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240" y="275"/>
+        </scene>
+        <!--Finish Order View Controller-->
+        <scene sceneID="59c-fh-yku">
+            <objects>
+                <viewController id="LSv-iT-Ukf" customClass="FinishOrderViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ZtH-G7-hs9">
+                        <rect key="frame" x="0.0" y="0.0" width="596" height="453"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9k6-gp-dUS">
+                                <rect key="frame" x="74" y="298" width="449" height="72"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="NES-GV-F9L">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <string key="title">How much do you want for each?
+(You may use the iPad.)</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RTJ-Xr-KX5">
+                                <rect key="frame" x="230" y="105" width="135" height="32"/>
+                                <buttonCell key="cell" type="push" title="Finish the order" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LaJ-jz-b7d">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5HY-TD-V3A">
+                                <rect key="frame" x="161" y="249" width="360" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="O6H-KW-OaQ"/>
+                                </constraints>
+                            </progressIndicator>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="HT9-er-Fas">
+                                <rect key="frame" x="161" y="217" width="360" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="tuR-Sp-s1L"/>
+                                </constraints>
+                            </progressIndicator>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-G4-ZaX">
+                                <rect key="frame" x="161" y="186" width="360" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="hU6-wp-rdO"/>
+                                </constraints>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="45f-SA-Y5p">
+                                <rect key="frame" x="74" y="250" width="47" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vodka" id="8Ye-qe-D4s">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CgC-Hi-oG8">
+                                <rect key="frame" x="74" y="217" width="71" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vermouth" id="TFp-Xr-xvQ">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Bi-Pw-rdP">
+                                <rect key="frame" x="74" y="187" width="73" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Club soda" id="Whe-ye-kG7">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="CgC-Hi-oG8" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="55r-q4-g5D"/>
+                            <constraint firstItem="RTJ-Xr-KX5" firstAttribute="centerX" secondItem="ZtH-G7-hs9" secondAttribute="centerX" id="6oQ-Rf-WOU"/>
+                            <constraint firstItem="5HY-TD-V3A" firstAttribute="top" secondItem="9k6-gp-dUS" secondAttribute="bottom" constant="30" id="7Oj-5e-CuZ"/>
+                            <constraint firstItem="cCc-G4-ZaX" firstAttribute="top" secondItem="HT9-er-Fas" secondAttribute="bottom" constant="13" id="ClT-Ta-JYX"/>
+                            <constraint firstItem="HT9-er-Fas" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="HYI-io-Vht"/>
+                            <constraint firstItem="5HY-TD-V3A" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="LYb-G6-LjH"/>
+                            <constraint firstItem="1Bi-Pw-rdP" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="XoR-WX-Dwf"/>
+                            <constraint firstItem="HT9-er-Fas" firstAttribute="top" secondItem="5HY-TD-V3A" secondAttribute="bottom" constant="14" id="YGG-UQ-PIx"/>
+                            <constraint firstItem="cCc-G4-ZaX" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="YqW-v8-g4p"/>
+                            <constraint firstItem="RTJ-Xr-KX5" firstAttribute="top" secondItem="cCc-G4-ZaX" secondAttribute="bottom" constant="54" id="Zrm-ID-1ee"/>
+                            <constraint firstItem="1Bi-Pw-rdP" firstAttribute="centerY" secondItem="cCc-G4-ZaX" secondAttribute="centerY" id="bc3-Z7-b9B"/>
+                            <constraint firstItem="9k6-gp-dUS" firstAttribute="centerX" secondItem="ZtH-G7-hs9" secondAttribute="centerX" id="h8h-WQ-Scm"/>
+                            <constraint firstItem="45f-SA-Y5p" firstAttribute="centerY" secondItem="5HY-TD-V3A" secondAttribute="centerY" id="lYw-Ck-y2e"/>
+                            <constraint firstItem="45f-SA-Y5p" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="sf8-F1-YMV"/>
+                            <constraint firstItem="CgC-Hi-oG8" firstAttribute="centerY" secondItem="HT9-er-Fas" secondAttribute="centerY" id="u5L-S7-Ved"/>
+                            <constraint firstItem="HT9-er-Fas" firstAttribute="centerY" secondItem="ZtH-G7-hs9" secondAttribute="centerY" id="wdR-39-G2c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progress0" destination="5HY-TD-V3A" id="Mbq-CF-LS7"/>
+                        <outlet property="progress1" destination="HT9-er-Fas" id="Qw5-GI-knK"/>
+                        <outlet property="progress2" destination="cCc-G4-ZaX" id="BdR-Sx-EEG"/>
+                    </connections>
+                </viewController>
+                <customObject id="Esd-Cs-Hh4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="956.5"/>
         </scene>
         <!--WhichJB View Controller-->
         <scene sceneID="2zU-Of-zaL">
@@ -517,6 +714,9 @@ Anyway, what is your name exactly?</string>
                             <constraint firstItem="3sW-xs-zop" firstAttribute="leading" secondItem="iP5-cY-peC" secondAttribute="centerX" id="tfy-C1-hHz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="efP-ik-3W4" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="d8Y-R6-ZR6"/>
+                    </connections>
                 </viewController>
                 <customObject id="0DA-YH-7Ya" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
