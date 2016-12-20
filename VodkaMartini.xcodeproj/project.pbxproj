@@ -11,7 +11,7 @@
 		73167D811E08C62300840E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73167D801E08C62300840E86 /* Assets.xcassets */; };
 		73167D981E08C6A000840E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8C1E08C6A000840E86 /* AppDelegate.swift */; };
 		73167D991E08C6A000840E86 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8D1E08C6A000840E86 /* WindowController.swift */; };
-		73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8E1E08C6A000840E86 /* ViewController.swift */; };
+		73167D9A1E08C6A000840E86 /* MixingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8E1E08C6A000840E86 /* MixingViewController.swift */; };
 		73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */; };
 		73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D901E08C6A000840E86 /* StemPlayer.swift */; };
 		73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D911E08C6A000840E86 /* ArduinoInterface.swift */; };
@@ -30,6 +30,7 @@
 		73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBA1E09154300840E86 /* ListenSampleViewController.swift */; };
 		73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBC1E09155400840E86 /* FinishOrderViewController.swift */; };
 		73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */; };
+		73DF1ECB1E0939C300C43897 /* CalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,7 @@
 		73167D8B1E08C69F00840E86 /* VodkaMartini-mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VodkaMartini-mac-Bridging-Header.h"; path = "VodkaMartini-mac/VodkaMartini-mac-Bridging-Header.h"; sourceTree = "<group>"; };
 		73167D8C1E08C6A000840E86 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73167D8D1E08C6A000840E86 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		73167D8E1E08C6A000840E86 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73167D8E1E08C6A000840E86 /* MixingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixingViewController.swift; sourceTree = "<group>"; };
 		73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderAppInterface.swift; sourceTree = "<group>"; };
 		73167D901E08C6A000840E86 /* StemPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StemPlayer.swift; sourceTree = "<group>"; };
 		73167D911E08C6A000840E86 /* ArduinoInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoInterface.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		73167DBA1E09154300840E86 /* ListenSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenSampleViewController.swift; sourceTree = "<group>"; };
 		73167DBC1E09155400840E86 /* FinishOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderViewController.swift; sourceTree = "<group>"; };
 		73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartenderTurnViewController.swift; sourceTree = "<group>"; };
+		73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrateViewController.swift; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +171,8 @@
 				73167DBA1E09154300840E86 /* ListenSampleViewController.swift */,
 				73167DBC1E09155400840E86 /* FinishOrderViewController.swift */,
 				73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */,
-				73167D8E1E08C6A000840E86 /* ViewController.swift */,
+				73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */,
+				73167D8E1E08C6A000840E86 /* MixingViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 			files = (
 				73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */,
 				73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */,
-				73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */,
+				73167D9A1E08C6A000840E86 /* MixingViewController.swift in Sources */,
 				73167DAD1E08CE9A00840E86 /* Order.swift in Sources */,
 				73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */,
 				73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */,
@@ -319,6 +322,7 @@
 				73167D981E08C6A000840E86 /* AppDelegate.swift in Sources */,
 				73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */,
 				73167D991E08C6A000840E86 /* WindowController.swift in Sources */,
+				73DF1ECB1E0939C300C43897 /* CalibrateViewController.swift in Sources */,
 				73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */,
 				73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */,
 				73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */,

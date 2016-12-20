@@ -7,10 +7,8 @@
 //
 
 import Cocoa
-//import AudioKit
 
-
-class ViewController: NSViewController, ArduinoInterfaceDelegate {
+class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
     
     @IBOutlet weak var label: NSTextField!
     @IBOutlet weak var slider0: NSSlider!

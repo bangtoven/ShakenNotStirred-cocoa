@@ -22,6 +22,7 @@ class FinishOrderViewController: NSViewController, SliderAppInterfaceDelegate {
         SliderAppInterface.sharedInstance.delegate = self
         
         StemPlayer.shared?.play()
+        StemPlayer.shared?.setVolume(1.0, forTrack: 3)
     }
     
     @IBAction func sliderValueChanged(_ sender: NSSlider) {

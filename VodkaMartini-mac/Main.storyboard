@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -211,7 +212,7 @@
 You are the new bartender, then.
 Or should we call you a mixologist?
 Tell us your name.</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -355,82 +356,134 @@ and listend to how it sounds like.</string>
         <!--ViewController-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ViewController" id="XfG-lQ-9wD" customClass="MixingViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1237" height="661"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-WH-jE6">
-                                <rect key="frame" x="312" y="451" width="37" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <slider horizontalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-tx-4tl">
+                                <rect key="frame" x="122" y="368" width="19" height="205"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="yn9-gU-OoX"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="bnr-Yy-RP5"/>
+                                </connections>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-l2-wld">
+                                <rect key="frame" x="210" y="368" width="19" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="KD4-2Z-UmL"/>
+                                </constraints>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="3lM-tH-xOq"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="TRc-vG-E9t"/>
+                                </connections>
+                            </slider>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eof-hY-IP5" customClass="GlassView" customModule="VodkaMartini" customModuleProvider="target">
+                                <rect key="frame" x="469" y="31" width="300" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="6VN-ZE-ySt"/>
+                                    <constraint firstAttribute="width" constant="300" id="ny9-yZ-wb8"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="F8F-26-II3" customClass="BottlesView" customModule="VodkaMartini" customModuleProvider="target">
+                                <rect key="frame" x="69" y="31" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="l7V-M3-g2N"/>
+                                    <constraint firstAttribute="width" constant="300" id="zxY-xT-c1P"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-WH-jE6">
+                                <rect key="frame" x="775" y="31" width="37" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="mLi-vs-a83">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LE3-no-Nz0">
-                                <rect key="frame" x="553" y="613" width="93" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="calibrate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Xmh-iB-DTo">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KfU-5j-L6p">
-                                <rect key="frame" x="25" y="310" width="19" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="faM-1t-oVd"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="wk2-Of-eCa"/>
-                                </connections>
-                            </slider>
-                            <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-tx-4tl">
-                                <rect key="frame" x="74" y="310" width="19" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="yn9-gU-OoX"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="bnr-Yy-RP5"/>
-                                </connections>
-                            </slider>
-                            <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-l2-wld">
-                                <rect key="frame" x="128" y="310" width="19" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="3lM-tH-xOq"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="TRc-vG-E9t"/>
-                                </connections>
-                            </slider>
-                            <slider horizontalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-Wf-9Pe">
-                                <rect key="frame" x="177" y="309" width="19" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="NLO-2M-8kP"/>
+                            <slider horizontalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-Wf-9Pe">
+                                <rect key="frame" x="297" y="368" width="19" height="205"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="NLO-2M-8kP"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="qZw-PI-2A1"/>
                                 </connections>
                             </slider>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eof-hY-IP5" customClass="GlassView" customModule="VodkaMartini" customModuleProvider="target">
-                                <rect key="frame" x="519" y="20" width="200" height="400"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nL-bn-Wnh">
+                                <rect key="frame" x="896" y="471" width="64" height="64"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="clock" id="fmk-3a-oSY"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8JI-2s-PGc">
+                                <rect key="frame" x="968" y="470" width="153" height="66"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="00:00" id="c7i-8l-w62">
+                                    <font key="font" metaFont="system" size="55"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pr5-GS-TxM">
+                                <rect key="frame" x="928" y="231" width="180" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="6VN-ZE-ySt"/>
-                                    <constraint firstAttribute="width" constant="200" id="ny9-yZ-wb8"/>
+                                    <constraint firstAttribute="height" constant="40" id="59O-VV-OO6"/>
+                                    <constraint firstAttribute="width" constant="180" id="psE-aF-qyQ"/>
                                 </constraints>
-                            </customView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-26-II3" customClass="BottlesView" customModule="VodkaMartini" customModuleProvider="target">
-                                <rect key="frame" x="686" y="277" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
+                                <buttonCell key="cell" type="square" title="Drain and restart." bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="veV-y4-hY7">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W8v-Yx-H3K">
+                                <rect key="frame" x="928" y="151" width="180" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uGa-Lo-GQP"/>
+                                    <constraint firstAttribute="width" constant="180" id="udj-NM-nnJ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Finish MIXING!" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pgF-Xi-spK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-6R-WGD">
+                                <rect key="frame" x="928" y="311" width="180" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZoL-Lh-NB7"/>
+                                    <constraint firstAttribute="width" constant="180" id="ptd-vE-Uak"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Play the order again." bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aKk-ns-Rzw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="eof-hY-IP5" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="1UH-H4-icR"/>
+                            <constraint firstItem="W8v-Yx-H3K" firstAttribute="centerX" secondItem="Pr5-GS-TxM" secondAttribute="centerX" id="583-8c-aiZ"/>
+                            <constraint firstItem="ljf-Wf-9Pe" firstAttribute="bottom" secondItem="kRE-l2-wld" secondAttribute="bottom" id="Dkh-FW-hfc"/>
+                            <constraint firstItem="8SS-6R-WGD" firstAttribute="top" secondItem="6nL-bn-Wnh" secondAttribute="bottom" constant="120" id="FnK-AM-PBJ"/>
+                            <constraint firstItem="W8v-Yx-H3K" firstAttribute="top" secondItem="Pr5-GS-TxM" secondAttribute="bottom" constant="40" id="GtH-Ly-xsT"/>
+                            <constraint firstItem="Pr5-GS-TxM" firstAttribute="top" secondItem="8SS-6R-WGD" secondAttribute="bottom" constant="40" id="JNg-re-bqz"/>
+                            <constraint firstItem="F8F-26-II3" firstAttribute="top" secondItem="kRE-l2-wld" secondAttribute="bottom" constant="40" id="JvY-5S-5ql"/>
+                            <constraint firstItem="Pr5-GS-TxM" firstAttribute="centerX" secondItem="8SS-6R-WGD" secondAttribute="centerX" id="Ruw-hf-1QC"/>
+                            <constraint firstItem="F8F-26-II3" firstAttribute="bottom" secondItem="eof-hY-IP5" secondAttribute="bottom" id="YJd-mE-Nes"/>
+                            <constraint firstItem="8JI-2s-PGc" firstAttribute="leading" secondItem="6nL-bn-Wnh" secondAttribute="trailing" constant="10" id="dRb-ic-5VW"/>
+                            <constraint firstItem="8JI-2s-PGc" firstAttribute="centerY" secondItem="6nL-bn-Wnh" secondAttribute="centerY" id="eBu-xB-MPP"/>
+                            <constraint firstItem="FZE-WH-jE6" firstAttribute="bottom" secondItem="eof-hY-IP5" secondAttribute="bottom" id="fXn-5O-vKW"/>
+                            <constraint firstItem="FZE-WH-jE6" firstAttribute="leading" secondItem="eof-hY-IP5" secondAttribute="trailing" constant="8" id="fm0-7I-l75"/>
+                            <constraint firstItem="8SS-6R-WGD" firstAttribute="leading" secondItem="eof-hY-IP5" secondAttribute="trailing" constant="159" id="gy5-fe-dAz"/>
+                            <constraint firstItem="eof-hY-IP5" firstAttribute="leading" secondItem="F8F-26-II3" secondAttribute="trailing" constant="100" id="hez-st-Evp"/>
+                            <constraint firstItem="8SS-6R-WGD" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="jYD-9x-Xyz"/>
+                            <constraint firstItem="kRE-l2-wld" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" id="kKU-lU-K2J"/>
+                            <constraint firstItem="ljf-Wf-9Pe" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" multiplier="1.4" id="mle-fC-SNY"/>
+                            <constraint firstItem="Cpc-tx-4tl" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" multiplier="0.6" id="q6j-9a-7Vs"/>
+                            <constraint firstItem="Cpc-tx-4tl" firstAttribute="height" secondItem="kRE-l2-wld" secondAttribute="height" id="rYO-EE-gqD"/>
+                            <constraint firstItem="Cpc-tx-4tl" firstAttribute="bottom" secondItem="kRE-l2-wld" secondAttribute="bottom" id="tEx-rC-oo3"/>
+                            <constraint firstItem="6nL-bn-Wnh" firstAttribute="centerX" secondItem="8SS-6R-WGD" secondAttribute="leading" id="vc8-8B-tZe"/>
                             <constraint firstItem="eof-hY-IP5" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="xMJ-I3-3V7"/>
-                            <constraint firstAttribute="bottom" secondItem="eof-hY-IP5" secondAttribute="bottom" constant="20" id="xPD-Ra-m3c"/>
+                            <constraint firstItem="ljf-Wf-9Pe" firstAttribute="height" secondItem="kRE-l2-wld" secondAttribute="height" id="z3h-0q-ppI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottlesView" destination="F8F-26-II3" id="4xJ-ro-YGI"/>
                         <outlet property="glassView" destination="eof-hY-IP5" id="hZA-mh-Bht"/>
                         <outlet property="label" destination="FZE-WH-jE6" id="5mU-kD-XzA"/>
-                        <outlet property="slider0" destination="KfU-5j-L6p" id="vIq-4S-iMP"/>
                         <outlet property="slider1" destination="Cpc-tx-4tl" id="Y1R-Nc-b8n"/>
                         <outlet property="slider2" destination="kRE-l2-wld" id="JWG-1N-XnX"/>
                         <outlet property="slider3" destination="ljf-Wf-9Pe" id="Nrd-ye-Evk"/>
@@ -438,7 +491,7 @@ and listend to how it sounds like.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="1683"/>
+            <point key="canvasLocation" x="761.5" y="1742.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4O-98-w3P">
@@ -460,7 +513,7 @@ Remember they are fastidious about the vodka martini,
 and some of them have licesnse to kill. 😱
 
 Now, pass this laptop to the customer and wait.</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -754,18 +807,20 @@ Anyway, what is your name exactly?</string>
                                     <font key="font" metaFont="system" size="30"/>
                                     <string key="title">BARTENDER! Now it's your turn.
 Listen carefully and make an exact mix 
-as agent CUSTOMER's order.
-Good luck!</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+as agent CUSTOMER's order.</string>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-Hf-VpD">
-                                <rect key="frame" x="164" y="14" width="124" height="32"/>
-                                <buttonCell key="cell" type="push" title="Start MIXING!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Oa-Sa-cRk">
+                                <rect key="frame" x="192" y="14" width="69" height="32"/>
+                                <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Oa-Sa-cRk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="Ghh-dE-tz5" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="RYU-hf-Dec"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -781,10 +836,62 @@ Good luck!</string>
                 </viewController>
                 <customObject id="y9v-DO-0WU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="1544"/>
+            <point key="canvasLocation" x="-796" y="1590"/>
+        </scene>
+        <!--Calibrate View Controller-->
+        <scene sceneID="hZw-Wi-3zq">
+            <objects>
+                <viewController id="Ghh-dE-tz5" customClass="CalibrateViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="DGA-ih-9JZ">
+                        <rect key="frame" x="0.0" y="0.0" width="456" height="771"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-Zl-BaP">
+                                <rect key="frame" x="168" y="38" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start MIXING" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XWV-e8-rT8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="gWe-rB-jjq"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rmf-86-9T6">
+                                <rect key="frame" x="36" y="706" width="385" height="36"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Place the mixer on the scale." id="dR5-Vc-cxF">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="PA5-dh-LfF" customClass="GlassView" customModule="VodkaMartini" customModuleProvider="target">
+                                <rect key="frame" x="78" y="86" width="300" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="F8b-gl-PSV"/>
+                                    <constraint firstAttribute="width" constant="300" id="ynp-f7-5RL"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iWg-Zl-BaP" firstAttribute="centerX" secondItem="DGA-ih-9JZ" secondAttribute="centerX" id="hHq-Gc-UDb"/>
+                            <constraint firstItem="iWg-Zl-BaP" firstAttribute="top" secondItem="PA5-dh-LfF" secondAttribute="bottom" constant="20" id="jtU-Xy-ipl"/>
+                            <constraint firstItem="rmf-86-9T6" firstAttribute="centerX" secondItem="DGA-ih-9JZ" secondAttribute="centerX" id="pdv-MG-dw3"/>
+                            <constraint firstItem="PA5-dh-LfF" firstAttribute="centerX" secondItem="DGA-ih-9JZ" secondAttribute="centerX" id="qjM-9g-6zs"/>
+                            <constraint firstItem="PA5-dh-LfF" firstAttribute="centerY" secondItem="DGA-ih-9JZ" secondAttribute="centerY" id="x4L-lX-duL"/>
+                            <constraint firstItem="PA5-dh-LfF" firstAttribute="top" secondItem="rmf-86-9T6" secondAttribute="bottom" constant="20" id="x4c-v0-nGF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="glassView" destination="PA5-dh-LfF" id="dwd-b4-9YA"/>
+                    </connections>
+                </viewController>
+                <customObject id="aLv-JC-DXM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-253" y="1742.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="clock" width="64" height="64"/>
         <image name="whichJB-0" width="256" height="768"/>
         <image name="whichJB-1" width="256" height="768"/>
         <image name="whichJB-2" width="256" height="768"/>
