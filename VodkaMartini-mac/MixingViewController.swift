@@ -60,10 +60,16 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
         self.mixAmount = [0,0,0]
     }
     
+    @IBAction func finishAction(_ sender: NSButton) {
+        self.performSegue(withIdentifier: "replace", sender: nil)
+    }
+    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         self.timer.invalidate()
         Order.current.resultMix = mixAmount.map( { Float($0)/Float(THRESHOLD)} )
         Order.current.totalTime = timeCount
+        
+        ArduinoInterface.sharedInstance.delegate = nil
     }
     
     var currentState = HolderState.All
@@ -125,5 +131,7 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
             }
         }
     }
+    
+    func arduinoInterface(ai: ArduinoInterface, newShaking: Bool) {}
 }
 

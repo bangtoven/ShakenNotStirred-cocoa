@@ -19,6 +19,7 @@ class CalibrateViewController: NSViewController, ArduinoInterfaceDelegate {
     
     func arduinoInterface(ai: ArduinoInterface, newState: HolderState) {
     }
+    func arduinoInterface(ai: ArduinoInterface, newShaking: Bool) {}
     
     func arduinoInterface(ai: ArduinoInterface, newWeight: Int) {
         var weight = CGFloat(newWeight)

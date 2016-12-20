@@ -35,9 +35,8 @@ class ListenSampleViewController: NSViewController, ArduinoInterfaceDelegate {
         }
     }
     
-    func arduinoInterface(ai: ArduinoInterface, newWeight: Int) {
-        
-    }
+    func arduinoInterface(ai: ArduinoInterface, newWeight: Int) {}
+    func arduinoInterface(ai: ArduinoInterface, newShaking: Bool) {}
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         ArduinoInterface.sharedInstance.delegate = nil

@@ -433,6 +433,9 @@ and listend to how it sounds like.</string>
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="finishAction:" target="XfG-lQ-9wD" id="msu-Bz-o5O"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-6R-WGD">
                                 <rect key="frame" x="928" y="311" width="180" height="40"/>
@@ -484,7 +487,7 @@ and listend to how it sounds like.</string>
                         <outlet property="slider3" destination="ljf-Wf-9Pe" id="Nrd-ye-Evk"/>
                         <outlet property="timerLabel" destination="8JI-2s-PGc" id="zIq-az-0Dh"/>
                         <outlet property="weightLabel" destination="FZE-WH-jE6" id="GC2-l9-Vmv"/>
-                        <segue destination="Hfh-wc-QVb" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="nJ8-YB-yHW"/>
+                        <segue destination="Hfh-wc-QVb" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="nJ8-YB-yHW"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -919,16 +922,25 @@ then, serve it in the glass.</string>
                                     <segue destination="8AZ-3R-PZ7" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="bZ7-Np-SNB"/>
                                 </connections>
                             </button>
+                            <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GYe-IG-2lU">
+                                <rect key="frame" x="-48" y="88" width="547" height="18"/>
+                                <levelIndicatorCell key="cell" alignment="left" maxValue="12" warningValue="4" criticalValue="8" id="pk9-cJ-e2T"/>
+                            </levelIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="iJk-1c-K27" firstAttribute="centerX" secondItem="1c2-fG-qVG" secondAttribute="centerX" id="2hx-tf-RAb"/>
                             <constraint firstItem="iJk-1c-K27" firstAttribute="top" secondItem="1c2-fG-qVG" secondAttribute="bottom" constant="8" id="3HV-Cy-TBf"/>
+                            <constraint firstItem="GYe-IG-2lU" firstAttribute="trailing" secondItem="1c2-fG-qVG" secondAttribute="trailing" id="5vK-rI-wIU"/>
                             <constraint firstItem="1c2-fG-qVG" firstAttribute="centerY" secondItem="W80-AY-1Ve" secondAttribute="centerY" id="95t-C1-Y7a"/>
+                            <constraint firstItem="GYe-IG-2lU" firstAttribute="leading" secondItem="1c2-fG-qVG" secondAttribute="leading" id="BVQ-UW-E0B"/>
+                            <constraint firstItem="GYe-IG-2lU" firstAttribute="bottom" secondItem="1c2-fG-qVG" secondAttribute="bottom" constant="-40" id="ow6-OG-v4l"/>
                             <constraint firstItem="1c2-fG-qVG" firstAttribute="centerX" secondItem="W80-AY-1Ve" secondAttribute="centerX" id="u9R-Ly-CpW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="instructionTextField" destination="1c2-fG-qVG" id="221-Z4-1R9"/>
+                        <outlet property="nextButton" destination="iJk-1c-K27" id="jRu-M0-ohe"/>
+                        <outlet property="shakingLevelIndicator" destination="GYe-IG-2lU" id="aTo-hX-34r"/>
                     </connections>
                 </viewController>
                 <customObject id="8lu-up-DfJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

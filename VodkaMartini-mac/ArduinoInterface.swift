@@ -12,6 +12,7 @@ import ORSSerial
 protocol ArduinoInterfaceDelegate {
     func arduinoInterface(ai: ArduinoInterface, newState: HolderState)
     func arduinoInterface(ai: ArduinoInterface, newWeight: Int)
+    func arduinoInterface(ai: ArduinoInterface, newShaking: Bool)
 }
 
 enum HolderState: Int16 {
@@ -40,7 +41,7 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
         serialPort?.open()
         
         // [strt , (data) , fnsh]: arduino uses this protocol.
-        let desc = ORSSerialPacketDescriptor(prefixString: "strt", suffixString: "fnsh", maximumPacketLength: 20, userInfo: nil)
+        let desc = ORSSerialPacketDescriptor(prefixString: "strt", suffixString: "fnsh", maximumPacketLength: 24, userInfo: nil)
         serialPort?.startListeningForPackets(matching: desc)
     }
     
@@ -49,7 +50,7 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
     
     func serialPort(_ serialPort: ORSSerialPort, didReceivePacket packetData: Data, matching descriptor:ORSSerialPacketDescriptor) {
         let data = packetData.withUnsafeBytes {
-            Array(UnsafeBufferPointer<Int16>(start: $0.advanced(by: 2), count: 2))
+            Array(UnsafeBufferPointer<Int16>(start: $0.advanced(by: 2), count: 3))
         }
         
         if let holderState = HolderState(rawValue: data[0]), holderState != self.holderState {
@@ -60,6 +61,11 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
         let weight = data[1]
         self.weight = weight
         self.delegate?.arduinoInterface(ai: self, newWeight: Int(weight))
+        
+        let shaken = data[2]
+        if shaken == 1 {
+            self.delegate?.arduinoInterface(ai: self, newShaking: true)
+        }
     }
     
     func sendColorToSerial(color: NSColor) {
