@@ -29,6 +29,7 @@
 		73167DB91E09048000840E86 /* FileSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DB81E09048000840E86 /* FileSelectViewController.swift */; };
 		73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBA1E09154300840E86 /* ListenSampleViewController.swift */; };
 		73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBC1E09155400840E86 /* FinishOrderViewController.swift */; };
+		73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		73167DB81E09048000840E86 /* FileSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectViewController.swift; sourceTree = "<group>"; };
 		73167DBA1E09154300840E86 /* ListenSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenSampleViewController.swift; sourceTree = "<group>"; };
 		73167DBC1E09155400840E86 /* FinishOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderViewController.swift; sourceTree = "<group>"; };
+		73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartenderTurnViewController.swift; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				73167DB81E09048000840E86 /* FileSelectViewController.swift */,
 				73167DBA1E09154300840E86 /* ListenSampleViewController.swift */,
 				73167DBC1E09155400840E86 /* FinishOrderViewController.swift */,
+				73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */,
 				73167D8E1E08C6A000840E86 /* ViewController.swift */,
 			);
 			name = controllers;
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */,
+				73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */,
 				73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */,
 				73167DAD1E08CE9A00840E86 /* Order.swift in Sources */,
 				73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */,

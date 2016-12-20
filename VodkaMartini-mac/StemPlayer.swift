@@ -11,14 +11,14 @@ import AVFoundation
 
 class StemPlayer {
     
-    static private var sharedInstance: StemPlayer?
+    static private var _shared: StemPlayer?
     static var shared: StemPlayer? {
-        if sharedInstance != nil {
-            return sharedInstance
-        } else if let url = Order.currentOrder?.stemFilePath {
-            return StemPlayer(url: url)
+        if _shared != nil {
+            return _shared
         } else {
-            return nil
+            let url = Order.currentOrder?.stemFilePath ?? URL(fileURLWithPath: Bundle.main.path(forResource: "master.stem", ofType: "mp4")!)
+            _shared = StemPlayer(url: url)
+            return _shared
         }
     }
     

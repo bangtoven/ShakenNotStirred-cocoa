@@ -438,7 +438,7 @@ and listend to how it sounds like.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="957"/>
+            <point key="canvasLocation" x="755" y="1683"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4O-98-w3P">
@@ -556,7 +556,7 @@ Anyway, what is your name exactly?</string>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="xGB-2v-eRQ"/>
+                                    <segue destination="S9O-n4-rPh" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="kuk-AI-ru2"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="45f-SA-Y5p">
@@ -736,6 +736,52 @@ Anyway, what is your name exactly?</string>
                 <customObject id="0DA-YH-7Ya" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="864" y="276"/>
+        </scene>
+        <!--Bartender Turn View Controller-->
+        <scene sceneID="KdU-ya-0Il">
+            <objects>
+                <viewController id="S9O-n4-rPh" customClass="BartenderTurnViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="uPp-iv-NGF">
+                        <rect key="frame" x="0.0" y="0.0" width="451" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b7p-lq-iGE">
+                                <rect key="frame" x="-36" y="50" width="524" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="esY-U5-Fpf"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="t6w-Xd-UvU">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <string key="title">BARTENDER! Now it's your turn.
+Listen carefully and make an exact mix 
+as agent CUSTOMER's order.
+Good luck!</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-Hf-VpD">
+                                <rect key="frame" x="164" y="14" width="124" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start MIXING!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Oa-Sa-cRk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sgi-Hf-VpD" firstAttribute="top" secondItem="b7p-lq-iGE" secondAttribute="bottom" constant="8" id="FS7-d7-CW8"/>
+                            <constraint firstItem="sgi-Hf-VpD" firstAttribute="centerX" secondItem="b7p-lq-iGE" secondAttribute="centerX" id="b6A-l7-fd7"/>
+                            <constraint firstItem="b7p-lq-iGE" firstAttribute="centerY" secondItem="uPp-iv-NGF" secondAttribute="centerY" id="ccP-fh-ULm"/>
+                            <constraint firstItem="b7p-lq-iGE" firstAttribute="centerX" secondItem="uPp-iv-NGF" secondAttribute="centerX" id="hQW-kD-PcI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionTextField" destination="b7p-lq-iGE" id="XXk-q6-645"/>
+                    </connections>
+                </viewController>
+                <customObject id="y9v-DO-0WU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="1544"/>
         </scene>
     </scenes>
     <resources>
