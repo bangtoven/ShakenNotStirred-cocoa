@@ -7,19 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73167D7D1E08C62300840E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D7C1E08C62300840E86 /* AppDelegate.swift */; };
-		73167D7F1E08C62300840E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D7E1E08C62300840E86 /* ViewController.swift */; };
+		2B6E76A92DEFC2A5A8B12932 /* Pods_VodkaMartini_mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B19AFB6F394661EC4434A4 /* Pods_VodkaMartini_mac.framework */; };
 		73167D811E08C62300840E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73167D801E08C62300840E86 /* Assets.xcassets */; };
-		73167D841E08C62300840E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73167D821E08C62300840E86 /* Main.storyboard */; };
+		73167D981E08C6A000840E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8C1E08C6A000840E86 /* AppDelegate.swift */; };
+		73167D991E08C6A000840E86 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8D1E08C6A000840E86 /* WindowController.swift */; };
+		73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8E1E08C6A000840E86 /* ViewController.swift */; };
+		73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */; };
+		73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D901E08C6A000840E86 /* StemPlayer.swift */; };
+		73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D911E08C6A000840E86 /* ArduinoInterface.swift */; };
+		73167D9E1E08C6A000840E86 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D921E08C6A000840E86 /* ReplaceSegue.swift */; };
+		73167D9F1E08C6A000840E86 /* GlassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73167D931E08C6A000840E86 /* GlassView.xib */; };
+		73167DA01E08C6A000840E86 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D941E08C6A000840E86 /* GlassView.swift */; };
+		73167DA11E08C6A000840E86 /* BottlesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73167D951E08C6A000840E86 /* BottlesView.xib */; };
+		73167DA21E08C6A000840E86 /* BottlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167D961E08C6A000840E86 /* BottlesView.swift */; };
+		73167DA31E08C6A000840E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73167D971E08C6A000840E86 /* Main.storyboard */; };
+		73167DA51E08C6AC00840E86 /* master.stem.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73167DA41E08C6AC00840E86 /* master.stem.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		088FAFFA2A66206BB1378A3A /* Pods-VodkaMartini-mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.release.xcconfig"; sourceTree = "<group>"; };
+		42B19AFB6F394661EC4434A4 /* Pods_VodkaMartini_mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodkaMartini_mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73167D791E08C62300840E86 /* VodkaMartini-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VodkaMartini-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73167D7C1E08C62300840E86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73167D7E1E08C62300840E86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73167D801E08C62300840E86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		73167D831E08C62300840E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73167D851E08C62300840E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73167D8B1E08C69F00840E86 /* VodkaMartini-mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VodkaMartini-mac-Bridging-Header.h"; sourceTree = "<group>"; };
+		73167D8C1E08C6A000840E86 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		73167D8D1E08C6A000840E86 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		73167D8E1E08C6A000840E86 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderAppInterface.swift; sourceTree = "<group>"; };
+		73167D901E08C6A000840E86 /* StemPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StemPlayer.swift; sourceTree = "<group>"; };
+		73167D911E08C6A000840E86 /* ArduinoInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArduinoInterface.swift; sourceTree = "<group>"; };
+		73167D921E08C6A000840E86 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
+		73167D931E08C6A000840E86 /* GlassView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlassView.xib; sourceTree = "<group>"; };
+		73167D941E08C6A000840E86 /* GlassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
+		73167D951E08C6A000840E86 /* BottlesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottlesView.xib; sourceTree = "<group>"; };
+		73167D961E08C6A000840E86 /* BottlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottlesView.swift; sourceTree = "<group>"; };
+		73167D971E08C6A000840E86 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		73167DA41E08C6AC00840E86 /* master.stem.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.stem.mp4; sourceTree = "<group>"; };
+		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +52,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6E76A92DEFC2A5A8B12932 /* Pods_VodkaMartini_mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		605D7606A1F031E213B1F70E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */,
+				088FAFFA2A66206BB1378A3A /* Pods-VodkaMartini-mac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		73167D701E08C62300840E86 = {
 			isa = PBXGroup;
 			children = (
 				73167D7B1E08C62300840E86 /* VodkaMartini-mac */,
 				73167D7A1E08C62300840E86 /* Products */,
+				605D7606A1F031E213B1F70E /* Pods */,
+				AC25E6105F2793565F9A5A62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +89,32 @@
 		73167D7B1E08C62300840E86 /* VodkaMartini-mac */ = {
 			isa = PBXGroup;
 			children = (
-				73167D7C1E08C62300840E86 /* AppDelegate.swift */,
-				73167D7E1E08C62300840E86 /* ViewController.swift */,
+				73167DA41E08C6AC00840E86 /* master.stem.mp4 */,
+				73167D8C1E08C6A000840E86 /* AppDelegate.swift */,
+				73167D8D1E08C6A000840E86 /* WindowController.swift */,
+				73167D8E1E08C6A000840E86 /* ViewController.swift */,
+				73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */,
+				73167D901E08C6A000840E86 /* StemPlayer.swift */,
+				73167D911E08C6A000840E86 /* ArduinoInterface.swift */,
+				73167D921E08C6A000840E86 /* ReplaceSegue.swift */,
+				73167D931E08C6A000840E86 /* GlassView.xib */,
+				73167D941E08C6A000840E86 /* GlassView.swift */,
+				73167D951E08C6A000840E86 /* BottlesView.xib */,
+				73167D961E08C6A000840E86 /* BottlesView.swift */,
+				73167D971E08C6A000840E86 /* Main.storyboard */,
 				73167D801E08C62300840E86 /* Assets.xcassets */,
-				73167D821E08C62300840E86 /* Main.storyboard */,
 				73167D851E08C62300840E86 /* Info.plist */,
+				73167D8B1E08C69F00840E86 /* VodkaMartini-mac-Bridging-Header.h */,
 			);
 			path = "VodkaMartini-mac";
+			sourceTree = "<group>";
+		};
+		AC25E6105F2793565F9A5A62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42B19AFB6F394661EC4434A4 /* Pods_VodkaMartini_mac.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73167D881E08C62300840E86 /* Build configuration list for PBXNativeTarget "VodkaMartini-mac" */;
 			buildPhases = (
+				03ED4A40709A79DC2AE23751 /* [CP] Check Pods Manifest.lock */,
 				73167D751E08C62300840E86 /* Sources */,
 				73167D761E08C62300840E86 /* Frameworks */,
 				73167D771E08C62300840E86 /* Resources */,
+				A27376F89B0956AFD5890906 /* [CP] Embed Pods Frameworks */,
+				353C983BCB420E55F70108DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -93,6 +152,7 @@
 				TargetAttributes = {
 					73167D781E08C62300840E86 = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -120,35 +180,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73167DA11E08C6A000840E86 /* BottlesView.xib in Resources */,
 				73167D811E08C62300840E86 /* Assets.xcassets in Resources */,
-				73167D841E08C62300840E86 /* Main.storyboard in Resources */,
+				73167D9F1E08C6A000840E86 /* GlassView.xib in Resources */,
+				73167DA51E08C6AC00840E86 /* master.stem.mp4 in Resources */,
+				73167DA31E08C6A000840E86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03ED4A40709A79DC2AE23751 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		353C983BCB420E55F70108DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A27376F89B0956AFD5890906 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73167D751E08C62300840E86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73167D7F1E08C62300840E86 /* ViewController.swift in Sources */,
-				73167D7D1E08C62300840E86 /* AppDelegate.swift in Sources */,
+				73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */,
+				73167D9A1E08C6A000840E86 /* ViewController.swift in Sources */,
+				73167D9C1E08C6A000840E86 /* StemPlayer.swift in Sources */,
+				73167D9E1E08C6A000840E86 /* ReplaceSegue.swift in Sources */,
+				73167D981E08C6A000840E86 /* AppDelegate.swift in Sources */,
+				73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */,
+				73167D991E08C6A000840E86 /* WindowController.swift in Sources */,
+				73167DA01E08C6A000840E86 /* GlassView.swift in Sources */,
+				73167DA21E08C6A000840E86 /* BottlesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		73167D821E08C62300840E86 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73167D831E08C62300840E86 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		73167D861E08C62300840E86 /* Debug */ = {
@@ -243,26 +350,33 @@
 		};
 		73167D891E08C62300840E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "VodkaMartini-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bangtoven.VodkaMartini-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VodkaMartini-mac/VodkaMartini-mac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		73167D8A1E08C62300840E86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 088FAFFA2A66206BB1378A3A /* Pods-VodkaMartini-mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "VodkaMartini-mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bangtoven.VodkaMartini-mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VodkaMartini-mac/VodkaMartini-mac-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -286,6 +400,7 @@
 				73167D8A1E08C62300840E86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

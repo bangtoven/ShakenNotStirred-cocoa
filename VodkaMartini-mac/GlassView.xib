@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GlassView" customModule="test" customModuleProvider="target">
+            <connections>
+                <outlet property="filling" destination="bhu-pT-db5" id="UiR-bL-aoq"/>
+                <outlet property="heightConstraint" destination="CsU-hF-kz3" id="Qbh-lv-9yh"/>
+                <outlet property="view" destination="c22-O7-iKe" id="OXE-tP-1AF"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="bhu-pT-db5">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="CsU-hF-kz3"/>
+                    </constraints>
+                </customView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-3d-a4G">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="glass" id="vl4-nR-fxh"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EB0-3d-a4G" secondAttribute="trailing" id="0Ma-jU-hx9"/>
+                <constraint firstItem="bhu-pT-db5" firstAttribute="bottom" secondItem="EB0-3d-a4G" secondAttribute="bottom" id="WbK-Q0-Ccv"/>
+                <constraint firstItem="bhu-pT-db5" firstAttribute="trailing" secondItem="EB0-3d-a4G" secondAttribute="trailing" id="aMw-J5-8i7"/>
+                <constraint firstAttribute="bottom" secondItem="EB0-3d-a4G" secondAttribute="bottom" id="kUp-wg-9oL"/>
+                <constraint firstItem="bhu-pT-db5" firstAttribute="leading" secondItem="EB0-3d-a4G" secondAttribute="leading" id="nDj-nJ-k4J"/>
+                <constraint firstItem="EB0-3d-a4G" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="vBW-I8-x3P"/>
+                <constraint firstItem="EB0-3d-a4G" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="wrx-qB-Syw"/>
+            </constraints>
+            <point key="canvasLocation" x="14" y="259"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="glass" width="400" height="800"/>
+    </resources>
+</document>

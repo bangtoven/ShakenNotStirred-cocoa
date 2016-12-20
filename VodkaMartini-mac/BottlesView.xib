@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BottlesView" customModule="test" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="Jcp-1b-eA7" id="fkB-J2-o8I"/>
+                <outlet property="view" destination="c22-O7-iKe" id="Zf1-Ng-jKo"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jcp-1b-eA7">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <subviews>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-Pg-qOQ">
+                            <rect key="frame" x="0.0" y="0.0" width="94.5" height="300"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageAlignment="bottom" imageScaling="proportionallyDown" image="red_vodka" id="BK5-v7-pjL"/>
+                        </imageView>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-PN-HM3">
+                            <rect key="frame" x="102.5" y="0.0" width="95" height="300"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageAlignment="bottom" imageScaling="proportionallyDown" image="green_vermouth" id="rgm-hs-LZ4"/>
+                        </imageView>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZOJ-OR-kT4">
+                            <rect key="frame" x="205.5" y="0.0" width="94.5" height="300"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageAlignment="bottom" imageScaling="proportionallyDown" image="blue_sparkling" id="k9x-m5-zTI"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ZOJ-OR-kT4" secondAttribute="bottom" id="0Kb-6t-U9j"/>
+                        <constraint firstAttribute="bottom" secondItem="dFd-Pg-qOQ" secondAttribute="bottom" id="2tg-UY-8HU"/>
+                        <constraint firstItem="3bE-PN-HM3" firstAttribute="top" secondItem="Jcp-1b-eA7" secondAttribute="top" id="Hrs-nb-jWb"/>
+                        <constraint firstItem="dFd-Pg-qOQ" firstAttribute="top" secondItem="Jcp-1b-eA7" secondAttribute="top" id="TPK-F8-oqZ"/>
+                        <constraint firstAttribute="height" constant="300" id="nhw-l9-Y8a"/>
+                        <constraint firstAttribute="bottom" secondItem="3bE-PN-HM3" secondAttribute="bottom" id="qEw-Sj-hCL"/>
+                        <constraint firstAttribute="width" constant="300" id="qaV-q6-X9A"/>
+                        <constraint firstItem="ZOJ-OR-kT4" firstAttribute="top" secondItem="Jcp-1b-eA7" secondAttribute="top" id="vEh-2V-rEY"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bqp-rp-JAc">
+                    <rect key="frame" x="0.5" y="0.0" width="300" height="60"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottom" imageScaling="axesIndependently" image="holder" id="UpR-54-7gf"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Bqp-rp-JAc" firstAttribute="height" secondItem="c22-O7-iKe" secondAttribute="height" multiplier="1:5" id="Uc5-1d-tWO"/>
+                <constraint firstItem="Jcp-1b-eA7" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="i92-sQ-Vc6"/>
+                <constraint firstItem="Jcp-1b-eA7" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="l0Q-Sz-3jr"/>
+                <constraint firstItem="Bqp-rp-JAc" firstAttribute="trailing" secondItem="Jcp-1b-eA7" secondAttribute="trailing" id="lJm-dl-e2d"/>
+                <constraint firstItem="Bqp-rp-JAc" firstAttribute="leading" secondItem="Jcp-1b-eA7" secondAttribute="leading" id="rm2-bW-yyS"/>
+                <constraint firstItem="Bqp-rp-JAc" firstAttribute="bottom" secondItem="Jcp-1b-eA7" secondAttribute="bottom" id="xJr-R3-5hB"/>
+            </constraints>
+            <point key="canvasLocation" x="184.5" y="239"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="blue_sparkling" width="77" height="250"/>
+        <image name="green_vermouth" width="77" height="250"/>
+        <image name="holder" width="150" height="35.5"/>
+        <image name="red_vodka" width="77" height="250"/>
+    </resources>
+</document>

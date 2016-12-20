@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  VodkaMartini-mac
+//  test
 //
-//  Created by 방정호 on 2016. 12. 19..
+//  Created by 방정호 on 2016. 12. 10..
 //  Copyright © 2016년 Bangtoven. All rights reserved.
 //
 
