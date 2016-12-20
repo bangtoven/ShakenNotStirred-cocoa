@@ -25,6 +25,15 @@ class SliderAppInterface {
 //            return HttpResponse.ok(.json(self.stemData as AnyObject))
 //        }
         
+//        server["files"] = { request in
+//            let paths = Bundle.main.paths(forResourcesOfType: "mp4", inDirectory: nil)
+//            let names = paths.map({ (p) -> String in
+//                return URL(fileURLWithPath: p).lastPathComponent
+//            })
+//            
+//            return HttpResponse.ok(.json(names as! AnyObject))
+//        }
+        
         server["update"] = { request in
             if let p = request.queryParams.last {
                 let i = Int(p.0)!

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "73167D781E08C62300840E86"
-               BuildableName = "VodkaMartini-mac.app"
-               BlueprintName = "VodkaMartini-mac"
-               ReferencedContainer = "container:VodkaMartini-mac.xcodeproj">
+               BuildableName = "VodkaMartini.app"
+               BlueprintName = "VodkaMartini"
+               ReferencedContainer = "container:VodkaMartini.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73167D781E08C62300840E86"
-            BuildableName = "VodkaMartini-mac.app"
-            BlueprintName = "VodkaMartini-mac"
-            ReferencedContainer = "container:VodkaMartini-mac.xcodeproj">
+            BuildableName = "VodkaMartini.app"
+            BlueprintName = "VodkaMartini"
+            ReferencedContainer = "container:VodkaMartini.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73167D781E08C62300840E86"
-            BuildableName = "VodkaMartini-mac.app"
-            BlueprintName = "VodkaMartini-mac"
-            ReferencedContainer = "container:VodkaMartini-mac.xcodeproj">
+            BuildableName = "VodkaMartini.app"
+            BlueprintName = "VodkaMartini"
+            ReferencedContainer = "container:VodkaMartini.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73167D781E08C62300840E86"
-            BuildableName = "VodkaMartini-mac.app"
-            BlueprintName = "VodkaMartini-mac"
-            ReferencedContainer = "container:VodkaMartini-mac.xcodeproj">
+            BuildableName = "VodkaMartini.app"
+            BlueprintName = "VodkaMartini"
+            ReferencedContainer = "container:VodkaMartini.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
