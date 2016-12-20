@@ -18,4 +18,6 @@ class Order {
     var orderMix: [Float]?
     
     var resultMix: [Float]?
+    
+    var totalTime: Int?
 }

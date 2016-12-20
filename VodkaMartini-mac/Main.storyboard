@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -353,30 +352,24 @@ and listend to how it sounds like.</string>
             </objects>
             <point key="canvasLocation" x="-220" y="956"/>
         </scene>
-        <!--ViewController-->
+        <!--Mixing-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="ViewController" id="XfG-lQ-9wD" customClass="MixingViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mixing" id="XfG-lQ-9wD" customClass="MixingViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1237" height="661"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <slider horizontalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-tx-4tl">
-                                <rect key="frame" x="122" y="368" width="19" height="205"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="yn9-gU-OoX"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="bnr-Yy-RP5"/>
-                                </connections>
+                                <rect key="frame" x="120" y="368" width="19" height="205"/>
+                                <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="yn9-gU-OoX"/>
                             </slider>
                             <slider horizontalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-l2-wld">
                                 <rect key="frame" x="210" y="368" width="19" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="KD4-2Z-UmL"/>
                                 </constraints>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="3lM-tH-xOq"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="TRc-vG-E9t"/>
-                                </connections>
+                                <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="3lM-tH-xOq"/>
                             </slider>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="eof-hY-IP5" customClass="GlassView" customModule="VodkaMartini" customModuleProvider="target">
                                 <rect key="frame" x="469" y="31" width="300" height="600"/>
@@ -401,11 +394,8 @@ and listend to how it sounds like.</string>
                                 </textFieldCell>
                             </textField>
                             <slider horizontalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-Wf-9Pe">
-                                <rect key="frame" x="297" y="368" width="19" height="205"/>
-                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="NLO-2M-8kP"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" target="XfG-lQ-9wD" id="qZw-PI-2A1"/>
-                                </connections>
+                                <rect key="frame" x="300" y="368" width="19" height="205"/>
+                                <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" tickMarkPosition="right" sliderType="linear" id="NLO-2M-8kP"/>
                             </slider>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6nL-bn-Wnh">
                                 <rect key="frame" x="896" y="471" width="64" height="64"/>
@@ -429,6 +419,9 @@ and listend to how it sounds like.</string>
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="calibrateAction:" target="XfG-lQ-9wD" id="RIx-HL-Tny"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W8v-Yx-H3K">
                                 <rect key="frame" x="928" y="151" width="180" height="40"/>
@@ -448,9 +441,12 @@ and listend to how it sounds like.</string>
                                     <constraint firstAttribute="width" constant="180" id="ptd-vE-Uak"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Play the order again." bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aKk-ns-Rzw">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="togglePlayMode:" target="XfG-lQ-9wD" id="ybq-oc-RbI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -459,10 +455,12 @@ and listend to how it sounds like.</string>
                             <constraint firstItem="ljf-Wf-9Pe" firstAttribute="bottom" secondItem="kRE-l2-wld" secondAttribute="bottom" id="Dkh-FW-hfc"/>
                             <constraint firstItem="8SS-6R-WGD" firstAttribute="top" secondItem="6nL-bn-Wnh" secondAttribute="bottom" constant="120" id="FnK-AM-PBJ"/>
                             <constraint firstItem="W8v-Yx-H3K" firstAttribute="top" secondItem="Pr5-GS-TxM" secondAttribute="bottom" constant="40" id="GtH-Ly-xsT"/>
+                            <constraint firstItem="ljf-Wf-9Pe" firstAttribute="leading" secondItem="kRE-l2-wld" secondAttribute="trailing" constant="75" id="IA0-Rg-aru"/>
                             <constraint firstItem="Pr5-GS-TxM" firstAttribute="top" secondItem="8SS-6R-WGD" secondAttribute="bottom" constant="40" id="JNg-re-bqz"/>
                             <constraint firstItem="F8F-26-II3" firstAttribute="top" secondItem="kRE-l2-wld" secondAttribute="bottom" constant="40" id="JvY-5S-5ql"/>
                             <constraint firstItem="Pr5-GS-TxM" firstAttribute="centerX" secondItem="8SS-6R-WGD" secondAttribute="centerX" id="Ruw-hf-1QC"/>
                             <constraint firstItem="F8F-26-II3" firstAttribute="bottom" secondItem="eof-hY-IP5" secondAttribute="bottom" id="YJd-mE-Nes"/>
+                            <constraint firstItem="kRE-l2-wld" firstAttribute="leading" secondItem="Cpc-tx-4tl" secondAttribute="trailing" constant="75" id="bZd-fP-ViC"/>
                             <constraint firstItem="8JI-2s-PGc" firstAttribute="leading" secondItem="6nL-bn-Wnh" secondAttribute="trailing" constant="10" id="dRb-ic-5VW"/>
                             <constraint firstItem="8JI-2s-PGc" firstAttribute="centerY" secondItem="6nL-bn-Wnh" secondAttribute="centerY" id="eBu-xB-MPP"/>
                             <constraint firstItem="FZE-WH-jE6" firstAttribute="bottom" secondItem="eof-hY-IP5" secondAttribute="bottom" id="fXn-5O-vKW"/>
@@ -471,8 +469,6 @@ and listend to how it sounds like.</string>
                             <constraint firstItem="eof-hY-IP5" firstAttribute="leading" secondItem="F8F-26-II3" secondAttribute="trailing" constant="100" id="hez-st-Evp"/>
                             <constraint firstItem="8SS-6R-WGD" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="jYD-9x-Xyz"/>
                             <constraint firstItem="kRE-l2-wld" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" id="kKU-lU-K2J"/>
-                            <constraint firstItem="ljf-Wf-9Pe" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" multiplier="1.4" id="mle-fC-SNY"/>
-                            <constraint firstItem="Cpc-tx-4tl" firstAttribute="centerX" secondItem="F8F-26-II3" secondAttribute="centerX" multiplier="0.6" id="q6j-9a-7Vs"/>
                             <constraint firstItem="Cpc-tx-4tl" firstAttribute="height" secondItem="kRE-l2-wld" secondAttribute="height" id="rYO-EE-gqD"/>
                             <constraint firstItem="Cpc-tx-4tl" firstAttribute="bottom" secondItem="kRE-l2-wld" secondAttribute="bottom" id="tEx-rC-oo3"/>
                             <constraint firstItem="6nL-bn-Wnh" firstAttribute="centerX" secondItem="8SS-6R-WGD" secondAttribute="leading" id="vc8-8B-tZe"/>
@@ -483,10 +479,11 @@ and listend to how it sounds like.</string>
                     <connections>
                         <outlet property="bottlesView" destination="F8F-26-II3" id="4xJ-ro-YGI"/>
                         <outlet property="glassView" destination="eof-hY-IP5" id="hZA-mh-Bht"/>
-                        <outlet property="label" destination="FZE-WH-jE6" id="5mU-kD-XzA"/>
                         <outlet property="slider1" destination="Cpc-tx-4tl" id="Y1R-Nc-b8n"/>
                         <outlet property="slider2" destination="kRE-l2-wld" id="JWG-1N-XnX"/>
                         <outlet property="slider3" destination="ljf-Wf-9Pe" id="Nrd-ye-Evk"/>
+                        <outlet property="timerLabel" destination="8JI-2s-PGc" id="zIq-az-0Dh"/>
+                        <outlet property="weightLabel" destination="FZE-WH-jE6" id="GC2-l9-Vmv"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
