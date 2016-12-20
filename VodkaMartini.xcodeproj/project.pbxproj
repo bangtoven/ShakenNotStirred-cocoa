@@ -34,6 +34,7 @@
 		73DF1ECD1E094EF100C43897 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECC1E094EF100C43897 /* ScoreViewController.swift */; };
 		73DF1ECF1E0952F800C43897 /* PourToGlassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECE1E0952F800C43897 /* PourToGlassViewController.swift */; };
 		73DF1ED11E09574300C43897 /* score.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 73DF1ED01E09574300C43897 /* score.m4a */; };
+		73DF1ED31E09BAF400C43897 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ED21E09BAF400C43897 /* FrontViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		73DF1ECC1E094EF100C43897 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		73DF1ECE1E0952F800C43897 /* PourToGlassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourToGlassViewController.swift; sourceTree = "<group>"; };
 		73DF1ED01E09574300C43897 /* score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = score.m4a; sourceTree = "<group>"; };
+		73DF1ED21E09BAF400C43897 /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 		73167DAB1E08CE3700840E86 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				73DF1ED21E09BAF400C43897 /* FrontViewController.swift */,
 				73167DB41E08E31800840E86 /* BartenderNameViewController.swift */,
 				73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */,
 				73167DB81E09048000840E86 /* FileSelectViewController.swift */,
@@ -334,6 +337,7 @@
 				73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */,
 				73167D991E08C6A000840E86 /* WindowController.swift in Sources */,
 				73DF1ECB1E0939C300C43897 /* CalibrateViewController.swift in Sources */,
+				73DF1ED31E09BAF400C43897 /* FrontViewController.swift in Sources */,
 				73167DBB1E09154300840E86 /* ListenSampleViewController.swift in Sources */,
 				73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */,
 				73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */,

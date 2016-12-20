@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="efP-ik-3W4">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="-1461" y="-230"/>
         </scene>
-        <!--View Controller-->
+        <!--Front View Controller-->
         <scene sceneID="C2A-cA-0Ds">
             <objects>
-                <viewController id="y6y-CL-CXg" sceneMemberID="viewController">
+                <viewController id="y6y-CL-CXg" customClass="FrontViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Vfr-j4-e2E">
                         <rect key="frame" x="0.0" y="0.0" width="928" height="628"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,14 +209,27 @@
                                     <segue destination="H95-u6-0ed" kind="custom" identifier="" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="yBN-an-lkZ"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gCt-8b-QvF">
+                                <rect key="frame" x="613" y="71" width="213" height="36"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last score: 000" id="9nU-gR-R1l">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="MPq-e5-Cop" firstAttribute="top" secondItem="5hV-H4-Cpy" secondAttribute="bottom" constant="10" id="F7q-FG-Ouc"/>
+                            <constraint firstItem="gCt-8b-QvF" firstAttribute="trailing" secondItem="5hV-H4-Cpy" secondAttribute="trailing" constant="-40" id="Lly-bC-voZ"/>
                             <constraint firstItem="5hV-H4-Cpy" firstAttribute="centerX" secondItem="Vfr-j4-e2E" secondAttribute="centerX" id="Nog-xX-ll2"/>
+                            <constraint firstItem="gCt-8b-QvF" firstAttribute="bottom" secondItem="5hV-H4-Cpy" secondAttribute="bottom" constant="-40" id="Srt-d9-yyw"/>
                             <constraint firstItem="MPq-e5-Cop" firstAttribute="centerX" secondItem="Vfr-j4-e2E" secondAttribute="centerX" id="gVw-ez-Pnq"/>
                             <constraint firstItem="5hV-H4-Cpy" firstAttribute="centerY" secondItem="Vfr-j4-e2E" secondAttribute="centerY" id="vbr-Eh-8wc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="gCt-8b-QvF" id="Z6Y-Qb-6YG"/>
+                    </connections>
                 </viewController>
                 <customObject id="ysw-Vt-GqE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1025,13 +1038,13 @@ Total: </string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmy-cT-KaU">
-                                <rect key="frame" x="264" y="96" width="103" height="32"/>
-                                <buttonCell key="cell" type="push" title="Start over." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K38-aE-29z">
+                                <rect key="frame" x="266" y="96" width="100" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start over" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K38-aE-29z">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="H95-u6-0ed" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="7Cd-S2-n7j"/>
+                                    <segue destination="y6y-CL-CXg" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="iuc-N1-rt6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1050,6 +1063,7 @@ Total: </string>
                     <connections>
                         <outlet property="namesLabel" destination="S4p-yu-J5n" id="nvv-Ll-WuL"/>
                         <outlet property="scoreLabel" destination="PAn-aU-By3" id="Ks6-FR-iVT"/>
+                        <outlet property="startOverButton" destination="mmy-cT-KaU" id="br1-ix-n1E"/>
                     </connections>
                 </viewController>
                 <customObject id="Tgy-pR-I36" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1066,6 +1080,6 @@ Total: </string>
         <image name="whichJB-3" width="256" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yBN-an-lkZ"/>
+        <segue reference="iuc-N1-rt6"/>
     </inferredMetricsTieBreakers>
 </document>

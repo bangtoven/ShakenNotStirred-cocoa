@@ -31,11 +31,25 @@ class FileSelectViewController: NSViewController {
         openPanel.allowedFileTypes = ["mp4"]
         openPanel.title = "Menu"
         openPanel.message = "Select what you want to MIX."
-        let i = openPanel.runModal()
-        if(i == NSFileHandlingPanelOKButton){
-            Order.current.stemFilePath = openPanel.url
-            self.performSegue(withIdentifier: "replace", sender: nil)
-            self.playerView.player = nil
+        let fi = openPanel.runModal()
+        if(fi == NSFileHandlingPanelOKButton){
+            if openPanel.url?.path.contains("Vodka") == true {
+                Order.current.stemFilePath = openPanel.url
+                self.performSegue(withIdentifier: "replace", sender: nil)
+                self.playerView.player = nil
+            } else {
+                let alert = NSAlert.init()
+                alert.messageText = "Not Vodka Martini?"
+                alert.informativeText = "How about martini as usual?"
+                alert.addButton(withTitle: "OK. Vodka martini.")
+                alert.addButton(withTitle: "No, I want this.")
+                let ai = alert.runModal()
+                if ai != 1000 {
+                    Order.current.stemFilePath = openPanel.url
+                    self.performSegue(withIdentifier: "replace", sender: nil)
+                    self.playerView.player = nil
+                }
+            }
         }
     }
     

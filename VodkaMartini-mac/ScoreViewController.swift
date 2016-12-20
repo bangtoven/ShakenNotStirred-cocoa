@@ -15,9 +15,12 @@ class ScoreViewController: NSViewController {
     @IBOutlet weak var scoreLabel: NSTextField!
     var player: AVPlayer!
     var count = 0
+    @IBOutlet weak var startOverButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startOverButton.isEnabled = false
         
         var str = namesLabel.stringValue
         if let b = Order.current.bartenderName {
@@ -59,10 +62,13 @@ class ScoreViewController: NSViewController {
             } else if s < 0 {
                 s = 0
             }
-            appending = "\(s)"
-            totalScore += Int(s.rounded())
+            let timeS = Int(s.rounded())
+            appending = "\(timeS)"
+            totalScore += timeS
         case 5:
             appending = "\(self.totalScore)"
+            Order.current.score = self.totalScore
+            startOverButton.isEnabled = true
         default:
             appending = " "
         }
