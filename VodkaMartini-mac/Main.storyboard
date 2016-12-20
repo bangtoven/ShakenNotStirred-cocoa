@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="8AZ-3R-PZ7">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
@@ -441,7 +441,7 @@ and listend to how it sounds like.</string>
                                     <constraint firstAttribute="width" constant="180" id="ptd-vE-Uak"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Play the order again." bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aKk-ns-Rzw">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
@@ -484,6 +484,7 @@ and listend to how it sounds like.</string>
                         <outlet property="slider3" destination="ljf-Wf-9Pe" id="Nrd-ye-Evk"/>
                         <outlet property="timerLabel" destination="8JI-2s-PGc" id="zIq-az-0Dh"/>
                         <outlet property="weightLabel" destination="FZE-WH-jE6" id="GC2-l9-Vmv"/>
+                        <segue destination="Hfh-wc-QVb" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="nJ8-YB-yHW"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -885,6 +886,123 @@ as agent CUSTOMER's order.</string>
                 <customObject id="aLv-JC-DXM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-253" y="1742.5"/>
+        </scene>
+        <!--Pour To Glass View Controller-->
+        <scene sceneID="MLd-st-pcO">
+            <objects>
+                <viewController id="Hfh-wc-QVb" customClass="PourToGlassViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="W80-AY-1Ve">
+                        <rect key="frame" x="0.0" y="0.0" width="451" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1c2-fG-qVG">
+                                <rect key="frame" x="-50" y="50" width="551" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="tJU-YH-sEv"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="K1G-32-3dW">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <string key="title">CUSTOMER ordered 'Shaken, not stirred.'
+Close the lid, shake the mixer,
+then, serve it in the glass.</string>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-1c-K27">
+                                <rect key="frame" x="191" y="14" width="69" height="32"/>
+                                <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ukV-Yt-jXl">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="8AZ-3R-PZ7" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="bZ7-Np-SNB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iJk-1c-K27" firstAttribute="centerX" secondItem="1c2-fG-qVG" secondAttribute="centerX" id="2hx-tf-RAb"/>
+                            <constraint firstItem="iJk-1c-K27" firstAttribute="top" secondItem="1c2-fG-qVG" secondAttribute="bottom" constant="8" id="3HV-Cy-TBf"/>
+                            <constraint firstItem="1c2-fG-qVG" firstAttribute="centerY" secondItem="W80-AY-1Ve" secondAttribute="centerY" id="95t-C1-Y7a"/>
+                            <constraint firstItem="1c2-fG-qVG" firstAttribute="centerX" secondItem="W80-AY-1Ve" secondAttribute="centerX" id="u9R-Ly-CpW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionTextField" destination="1c2-fG-qVG" id="221-Z4-1R9"/>
+                    </connections>
+                </viewController>
+                <customObject id="8lu-up-DfJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797" y="2464"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="Oat-dE-HCA">
+            <objects>
+                <viewController id="8AZ-3R-PZ7" customClass="ScoreViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="AKh-Wt-cvB">
+                        <rect key="frame" x="0.0" y="0.0" width="631" height="632"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OlR-MF-hhU">
+                                <rect key="frame" x="105" y="172" width="213" height="288"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="iXa-Dr-OSx">
+                                    <font key="font" metaFont="system" size="40"/>
+                                    <string key="title">Vodka
+Vermouth
+Club soda
+Time Bonus
+
+Total: </string>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-aU-By3">
+                                <rect key="frame" x="322" y="172" width="254" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Epe-V3-57b"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="Tzu-n7-2va">
+                                    <font key="font" metaFont="system" size="40"/>
+                                    <string key="title">Vodka
+Vermouth
+Club soda
+Time Bonus
+
+Total: </string>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4p-yu-J5n">
+                                <rect key="frame" x="105" y="483" width="399" height="96"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="NBo-fF-Qex">
+                                    <font key="font" metaFont="system" size="40"/>
+                                    <string key="title">CUSTOMER's order 
+mixed by BARTENDER</string>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="OlR-MF-hhU" firstAttribute="trailing" secondItem="AKh-Wt-cvB" secondAttribute="centerX" id="4Sg-gW-eAm"/>
+                            <constraint firstItem="OlR-MF-hhU" firstAttribute="centerY" secondItem="AKh-Wt-cvB" secondAttribute="centerY" id="6qH-ec-LOy"/>
+                            <constraint firstItem="PAn-aU-By3" firstAttribute="bottom" secondItem="OlR-MF-hhU" secondAttribute="bottom" id="Hjn-nQ-7YY"/>
+                            <constraint firstItem="OlR-MF-hhU" firstAttribute="top" secondItem="S4p-yu-J5n" secondAttribute="bottom" constant="23" id="Uky-E9-Ir6"/>
+                            <constraint firstItem="S4p-yu-J5n" firstAttribute="leading" secondItem="OlR-MF-hhU" secondAttribute="leading" id="WUW-78-487"/>
+                            <constraint firstItem="PAn-aU-By3" firstAttribute="top" secondItem="OlR-MF-hhU" secondAttribute="top" id="cCZ-Ow-vJP"/>
+                            <constraint firstItem="PAn-aU-By3" firstAttribute="leading" secondItem="OlR-MF-hhU" secondAttribute="trailing" constant="8" id="gtY-7Y-UIA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="namesLabel" destination="S4p-yu-J5n" id="nvv-Ll-WuL"/>
+                        <outlet property="scoreLabel" destination="PAn-aU-By3" id="Ks6-FR-iVT"/>
+                    </connections>
+                </viewController>
+                <customObject id="Tgy-pR-I36" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126.5" y="2589"/>
         </scene>
     </scenes>
     <resources>

@@ -31,6 +31,9 @@
 		73167DBD1E09155400840E86 /* FinishOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DBC1E09155400840E86 /* FinishOrderViewController.swift */; };
 		73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */; };
 		73DF1ECB1E0939C300C43897 /* CalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */; };
+		73DF1ECD1E094EF100C43897 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECC1E094EF100C43897 /* ScoreViewController.swift */; };
+		73DF1ECF1E0952F800C43897 /* PourToGlassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF1ECE1E0952F800C43897 /* PourToGlassViewController.swift */; };
+		73DF1ED11E09574300C43897 /* score.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 73DF1ED01E09574300C43897 /* score.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		73167DBC1E09155400840E86 /* FinishOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishOrderViewController.swift; sourceTree = "<group>"; };
 		73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartenderTurnViewController.swift; sourceTree = "<group>"; };
 		73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrateViewController.swift; sourceTree = "<group>"; };
+		73DF1ECC1E094EF100C43897 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		73DF1ECE1E0952F800C43897 /* PourToGlassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourToGlassViewController.swift; sourceTree = "<group>"; };
+		73DF1ED01E09574300C43897 /* score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = score.m4a; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,7 @@
 			children = (
 				73167DA41E08C6AC00840E86 /* master.stem.mp4 */,
 				73167DB61E08FB8400840E86 /* vodkamartini-video.mov */,
+				73DF1ED01E09574300C43897 /* score.m4a */,
 				73167DA71E08CDE000840E86 /* main */,
 				73167DA81E08CDEC00840E86 /* models */,
 				73167DAB1E08CE3700840E86 /* controllers */,
@@ -173,6 +180,8 @@
 				73DF1EC81E092B0500C43897 /* BartenderTurnViewController.swift */,
 				73DF1ECA1E0939C300C43897 /* CalibrateViewController.swift */,
 				73167D8E1E08C6A000840E86 /* MixingViewController.swift */,
+				73DF1ECE1E0952F800C43897 /* PourToGlassViewController.swift */,
+				73DF1ECC1E094EF100C43897 /* ScoreViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				73167D811E08C62300840E86 /* Assets.xcassets in Resources */,
 				73167D9F1E08C6A000840E86 /* GlassView.xib in Resources */,
 				73167DA51E08C6AC00840E86 /* master.stem.mp4 in Resources */,
+				73DF1ED11E09574300C43897 /* score.m4a in Resources */,
 				73167DA31E08C6A000840E86 /* Main.storyboard in Resources */,
 				73167DB71E08FB8400840E86 /* vodkamartini-video.mov in Resources */,
 			);
@@ -313,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73167D9B1E08C6A000840E86 /* SliderAppInterface.swift in Sources */,
+				73DF1ECF1E0952F800C43897 /* PourToGlassViewController.swift in Sources */,
 				73DF1EC91E092B0500C43897 /* BartenderTurnViewController.swift in Sources */,
 				73167D9A1E08C6A000840E86 /* MixingViewController.swift in Sources */,
 				73167DAD1E08CE9A00840E86 /* Order.swift in Sources */,
@@ -329,6 +340,7 @@
 				73167DA01E08C6A000840E86 /* GlassView.swift in Sources */,
 				73167DB91E09048000840E86 /* FileSelectViewController.swift in Sources */,
 				73167DA21E08C6A000840E86 /* BottlesView.swift in Sources */,
+				73DF1ECD1E094EF100C43897 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
