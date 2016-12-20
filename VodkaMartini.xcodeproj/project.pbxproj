@@ -24,6 +24,7 @@
 		73167DA51E08C6AC00840E86 /* master.stem.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73167DA41E08C6AC00840E86 /* master.stem.mp4 */; };
 		73167DAD1E08CE9A00840E86 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DAC1E08CE9A00840E86 /* Order.swift */; };
 		73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */; };
+		73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73167DB41E08E31800840E86 /* BartenderNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		73167DA41E08C6AC00840E86 /* master.stem.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = master.stem.mp4; sourceTree = "<group>"; };
 		73167DAC1E08CE9A00840E86 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhichJBViewController.swift; sourceTree = "<group>"; };
+		73167DB41E08E31800840E86 /* BartenderNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartenderNameViewController.swift; sourceTree = "<group>"; };
 		B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodkaMartini-mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VodkaMartini-mac/Pods-VodkaMartini-mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				73167D8E1E08C6A000840E86 /* ViewController.swift */,
+				73167DB41E08E31800840E86 /* BartenderNameViewController.swift */,
 				73167DAE1E08E16D00840E86 /* WhichJBViewController.swift */,
 			);
 			name = controllers;
@@ -299,6 +302,7 @@
 				73167D9D1E08C6A000840E86 /* ArduinoInterface.swift in Sources */,
 				73167D991E08C6A000840E86 /* WindowController.swift in Sources */,
 				73167DAF1E08E16D00840E86 /* WhichJBViewController.swift in Sources */,
+				73167DB51E08E31800840E86 /* BartenderNameViewController.swift in Sources */,
 				73167DA01E08C6A000840E86 /* GlassView.swift in Sources */,
 				73167DA21E08C6A000840E86 /* BottlesView.swift in Sources */,
 			);

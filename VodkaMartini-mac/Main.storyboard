@@ -166,7 +166,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="VodkaMartini" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-202"/>
+            <point key="canvasLocation" x="-1313" y="64"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -175,7 +175,7 @@
                     <window key="window" title="Shaken, not stirred" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="800" height="600"/>
+                        <rect key="contentRect" x="196" y="240" width="375" height="254"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -184,37 +184,37 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="210"/>
+            <point key="canvasLocation" x="-1312" y="283"/>
         </scene>
-        <!--View Controller-->
+        <!--Bartender Name View Controller-->
         <scene sceneID="Yet-yl-Q58">
             <objects>
-                <viewController id="H95-u6-0ed" sceneMemberID="viewController">
+                <viewController id="H95-u6-0ed" customClass="BartenderNameViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="P8L-1q-Qqy">
                         <rect key="frame" x="0.0" y="0.0" width="451" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-Yc-hHe">
-                                <rect key="frame" x="13" y="35" width="360" height="29"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Mixologist" drawsBackground="YES" id="TMx-fk-OlA">
+                                <rect key="frame" x="24" y="35" width="339" height="29"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="name" drawsBackground="YES" id="TMx-fk-OlA">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Nt-Yr-ioN">
-                                <rect key="frame" x="11" y="96" width="429" height="108"/>
+                                <rect key="frame" x="22" y="96" width="408" height="108"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="" id="VPn-LD-9GB">
                                     <font key="font" metaFont="system" size="30"/>
                                     <string key="title">Hi, there.
-Enter your cool bartender name 
-and hit Next.</string>
+So, you are the new bartender.
+Tell us your name.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5AG-hH-JO2">
-                                <rect key="frame" x="375" y="32" width="69" height="32"/>
+                                <rect key="frame" x="365" y="32" width="69" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="nLJ-Po-fOp"/>
                                 </constraints>
@@ -237,10 +237,26 @@ and hit Next.</string>
                             <constraint firstItem="2Nt-Yr-ioN" firstAttribute="centerY" secondItem="P8L-1q-Qqy" secondAttribute="centerY" id="zK3-Qx-R9e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="Ffh-Yc-hHe" id="8DQ-5M-AQJ"/>
+                    </connections>
                 </viewController>
                 <customObject id="njC-Ae-x4T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.5" y="854"/>
+            <point key="canvasLocation" x="-794" y="275"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="buL-jF-2xY">
+            <objects>
+                <viewController id="efP-ik-3W4" sceneMemberID="viewController">
+                    <view key="view" id="nQO-Zl-BWx">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="P9a-gv-yWZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-793" y="683"/>
         </scene>
         <!--ViewController-->
         <scene sceneID="hIz-AP-VOD">
@@ -328,7 +344,7 @@ and hit Next.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="1422"/>
+            <point key="canvasLocation" x="-401" y="1325"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4O-98-w3P">
@@ -372,7 +388,7 @@ Now, pass this laptop to the customer and wait.</string>
                 </viewController>
                 <customObject id="uQb-i8-IHr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559" y="854"/>
+            <point key="canvasLocation" x="-283" y="275"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B5n-p0-gXG">
@@ -398,6 +414,9 @@ Anyway, what is your name exactly?</string>
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="PLZ-2f-xOX" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="0N7-KT-ASn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -410,18 +429,18 @@ Anyway, what is your name exactly?</string>
                 </viewController>
                 <customObject id="c5G-fz-GI4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="854"/>
+            <point key="canvasLocation" x="240" y="275"/>
         </scene>
         <!--WhichJB View Controller-->
         <scene sceneID="2zU-Of-zaL">
             <objects>
                 <viewController id="PLZ-2f-xOX" customClass="WhichJBViewController" customModule="VodkaMartini" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="iP5-cY-peC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="609" height="405"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-ca-OwR">
-                                <rect key="frame" x="387" y="684" width="251" height="36"/>
+                                <rect key="frame" x="179" y="523" width="251" height="36"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Which JB are you?" id="XCz-MG-TQa">
                                     <font key="font" metaFont="system" size="30"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -429,7 +448,7 @@ Anyway, what is your name exactly?</string>
                                 </textFieldCell>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-nf-Klz">
-                                <rect key="frame" x="113" y="84" width="200" height="600"/>
+                                <rect key="frame" x="-95" y="-98" width="201" height="601"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="s62-xw-94a"/>
                                     <constraint firstAttribute="height" constant="600" id="yon-gL-0HW"/>
@@ -443,7 +462,7 @@ Anyway, what is your name exactly?</string>
                                 </connections>
                             </button>
                             <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-dk-8Sk">
-                                <rect key="frame" x="312" y="84" width="200" height="600"/>
+                                <rect key="frame" x="105" y="-98" width="200" height="601"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="aCM-Xw-OkQ"/>
                                     <constraint firstAttribute="height" constant="600" id="oku-AE-UQP"/>
@@ -457,7 +476,7 @@ Anyway, what is your name exactly?</string>
                                 </connections>
                             </button>
                             <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="3sW-xs-zop">
-                                <rect key="frame" x="512" y="84" width="200" height="600"/>
+                                <rect key="frame" x="305" y="-98" width="200" height="601"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="64Q-6Q-dSo"/>
                                     <constraint firstAttribute="height" constant="600" id="WI3-AN-5TE"/>
@@ -471,12 +490,12 @@ Anyway, what is your name exactly?</string>
                                 </connections>
                             </button>
                             <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="phP-ku-G7I">
-                                <rect key="frame" x="711" y="84" width="200" height="600"/>
+                                <rect key="frame" x="504" y="-98" width="200" height="601"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="hNk-Bf-I3E"/>
                                     <constraint firstAttribute="height" constant="600" id="sio-GR-OyB"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="whichJB-0" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8TG-Ys-NmQ">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="whichJB-3" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8TG-Ys-NmQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -487,8 +506,8 @@ Anyway, what is your name exactly?</string>
                         </subviews>
                         <constraints>
                             <constraint firstItem="X4m-dk-8Sk" firstAttribute="trailing" secondItem="iP5-cY-peC" secondAttribute="centerX" id="CRA-sz-A5U"/>
+                            <constraint firstItem="X4m-dk-8Sk" firstAttribute="top" secondItem="GMB-ca-OwR" secondAttribute="bottom" constant="20" id="Evc-Du-pDe"/>
                             <constraint firstItem="X4m-dk-8Sk" firstAttribute="leading" secondItem="TnQ-nf-Klz" secondAttribute="trailing" constant="-1" id="TE7-f2-75E"/>
-                            <constraint firstItem="GMB-ca-OwR" firstAttribute="top" secondItem="iP5-cY-peC" secondAttribute="top" constant="48" id="Vlh-fI-ifT"/>
                             <constraint firstItem="phP-ku-G7I" firstAttribute="centerY" secondItem="iP5-cY-peC" secondAttribute="centerY" id="XYX-Yo-yk5"/>
                             <constraint firstItem="phP-ku-G7I" firstAttribute="leading" secondItem="3sW-xs-zop" secondAttribute="trailing" constant="-1" id="Ytk-44-4rD"/>
                             <constraint firstItem="TnQ-nf-Klz" firstAttribute="centerY" secondItem="iP5-cY-peC" secondAttribute="centerY" id="Z4h-gQ-Gen"/>
@@ -501,12 +520,13 @@ Anyway, what is your name exactly?</string>
                 </viewController>
                 <customObject id="0DA-YH-7Ya" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="866"/>
+            <point key="canvasLocation" x="864" y="276"/>
         </scene>
     </scenes>
     <resources>
         <image name="whichJB-0" width="256" height="768"/>
         <image name="whichJB-1" width="256" height="768"/>
         <image name="whichJB-2" width="256" height="768"/>
+        <image name="whichJB-3" width="256" height="768"/>
     </resources>
 </document>
