@@ -10,6 +10,18 @@ import Cocoa
 import AVFoundation
 
 class StemPlayer {
+    
+    static private var sharedInstance: StemPlayer?
+    static var shared: StemPlayer? {
+        if sharedInstance != nil {
+            return sharedInstance
+        } else if let url = Order.currentOrder?.stemFilePath {
+            return StemPlayer(url: url)
+        } else {
+            return nil
+        }
+    }
+    
     var players = [AVQueuePlayer]()
     var loopers = [AVPlayerLooper]()
     
@@ -29,12 +41,12 @@ class StemPlayer {
         }
         
         
-        for i in 0..<4 {
+        for i in [1,2,3,0] {
             let composition = AVMutableComposition()
             let track = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
             do {
-                var duration = asset.duration
-                duration.value -= 660
+//                var duration = asset.duration
+//                duration.value -= 880
                 try track.insertTimeRange(CMTimeRange(start: kCMTimeZero, end: asset.duration), of: asset.tracks[i+1], at: kCMTimeZero)
             } catch {
                 
@@ -42,7 +54,7 @@ class StemPlayer {
             let item = AVPlayerItem(asset: composition)
             
             let p = AVQueuePlayer(playerItem: item)
-//            p.volume = 0
+            p.volume = 0
             let l = AVPlayerLooper(player: p, templateItem: item)
             self.players.append(p)
             self.loopers.append(l)
@@ -55,8 +67,21 @@ class StemPlayer {
         }
     }
     
+    func stop() {
+        for p in players {
+            p.pause()
+            p.seek(to: kCMTimeZero)
+        }
+    }
+    
     func setVolume(_ v: Float, forTrack i: Int) {
         self.players[i].volume = v
+    }
+    
+    func mute() {
+        for p in players {
+            p.volume = 0
+        }
     }
     
 }

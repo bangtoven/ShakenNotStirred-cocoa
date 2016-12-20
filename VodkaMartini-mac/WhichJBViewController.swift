@@ -16,6 +16,8 @@ class WhichJBViewController: NSViewController {
     }
     
     @IBAction func buttonAction(_ sender: NSButton) {
+        let names = ["James Bond", "Jack Bauer", "Jason Bourne", "Jungho Bang"]
+        Order.currentOrder?.customerName = names[sender.tag]
         self.performSegue(withIdentifier: "replace", sender: nil)
     }
     

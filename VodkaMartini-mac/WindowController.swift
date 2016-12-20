@@ -17,9 +17,5 @@ class WindowController: NSWindowController {
         
         
     }
-
     
-    func afafafaf() {
-//        SliderAppInterface()
-    }
 }

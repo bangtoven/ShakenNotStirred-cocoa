@@ -10,21 +10,34 @@ import Cocoa
 
 class FinishOrderViewController: NSViewController, SliderAppInterfaceDelegate {
 
-    @IBOutlet weak var progress0: NSProgressIndicator!
-    @IBOutlet weak var progress1: NSProgressIndicator!
-    @IBOutlet weak var progress2: NSProgressIndicator!
-    var progressBars: [NSProgressIndicator]!
+    @IBOutlet weak var slider0: NSSlider!
+    @IBOutlet weak var slider1: NSSlider!
+    @IBOutlet weak var slider2: NSSlider!
+    var sliders: [NSSlider]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliders = [slider0, slider1, slider2]
         
-        SliderAppInterface().delegate = self
+        SliderAppInterface.sharedInstance.delegate = self
         
-        progressBars = [progress0, progress1, progress2]
+        StemPlayer.shared?.play()
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: NSSlider) {
+        let volume = sender.floatValue/100.0
+        
+        StemPlayer.shared?.setVolume(volume, forTrack: sender.tag)
     }
     
     func sliderAppUpdate(index: Int, value: Float) {
-        progressBars[index].doubleValue = Double(value)
+        sliders[index].floatValue = value*100
+        StemPlayer.shared?.setVolume(value, forTrack: index)
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        Order.currentOrder?.orderMix = sliders.map({ $0.floatValue })
+        SliderAppInterface.sharedInstance.delegate = nil
     }
     
 }

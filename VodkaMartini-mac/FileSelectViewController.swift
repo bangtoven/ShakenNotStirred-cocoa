@@ -31,9 +31,12 @@ class FileSelectViewController: NSViewController {
         openPanel.message = "Select what you want to MIX."
         let i = openPanel.runModal()
         if(i == NSFileHandlingPanelOKButton){
-            print(openPanel.url!)
+            Order.currentOrder?.stemFilePath = openPanel.url
             self.performSegue(withIdentifier: "replace", sender: nil)
+            self.playerView.player = nil
         }
     }
+    
+    
     
 }

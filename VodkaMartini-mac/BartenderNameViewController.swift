@@ -14,7 +14,11 @@ class BartenderNameViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        Order.currentOrder = Order()
+        Order.currentOrder?.bartenderName = nameTextField.stringValue.isEmpty ? "Bartender0" : nameTextField.stringValue
     }
     
 }

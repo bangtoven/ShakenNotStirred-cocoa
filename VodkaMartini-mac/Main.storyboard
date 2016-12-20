@@ -225,7 +225,7 @@ Tell us your name.</string>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="nVb-aQ-8JT" kind="custom" identifier="" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="6w3-PM-KBE"/>
+                                    <segue destination="nVb-aQ-8JT" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="6w3-PM-KBE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -438,7 +438,7 @@ and listend to how it sounds like.</string>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="1038"/>
+            <point key="canvasLocation" x="1517" y="957"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s4O-98-w3P">
@@ -555,25 +555,10 @@ Anyway, what is your name exactly?</string>
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="replace" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="xGB-2v-eRQ"/>
+                                </connections>
                             </button>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5HY-TD-V3A">
-                                <rect key="frame" x="161" y="249" width="360" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="O6H-KW-OaQ"/>
-                                </constraints>
-                            </progressIndicator>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="HT9-er-Fas">
-                                <rect key="frame" x="161" y="217" width="360" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="tuR-Sp-s1L"/>
-                                </constraints>
-                            </progressIndicator>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-G4-ZaX">
-                                <rect key="frame" x="161" y="186" width="360" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="hU6-wp-rdO"/>
-                                </constraints>
-                            </progressIndicator>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="45f-SA-Y5p">
                                 <rect key="frame" x="74" y="250" width="47" height="19"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vodka" id="8Ye-qe-D4s">
@@ -598,30 +583,60 @@ Anyway, what is your name exactly?</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <slider verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="uOV-63-8gk">
+                                <rect key="frame" x="169" y="217" width="354" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="NRX-sr-BYk"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="zsp-Dz-09d"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="LSv-iT-Ukf" id="sMH-cU-wg8"/>
+                                </connections>
+                            </slider>
+                            <slider verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-ZJ-hNy">
+                                <rect key="frame" x="169" y="187" width="354" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="bfd-Fi-mpD"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="ySS-xJ-9Sy"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="LSv-iT-Ukf" id="Am0-3u-AsK"/>
+                                </connections>
+                            </slider>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-wD-V8T">
+                                <rect key="frame" x="169" y="250" width="354" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Y5n-u6-f38"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="1u8-AT-ku6"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="LSv-iT-Ukf" id="W92-37-A8g"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <constraints>
                             <constraint firstItem="CgC-Hi-oG8" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="55r-q4-g5D"/>
                             <constraint firstItem="RTJ-Xr-KX5" firstAttribute="centerX" secondItem="ZtH-G7-hs9" secondAttribute="centerX" id="6oQ-Rf-WOU"/>
-                            <constraint firstItem="5HY-TD-V3A" firstAttribute="top" secondItem="9k6-gp-dUS" secondAttribute="bottom" constant="30" id="7Oj-5e-CuZ"/>
-                            <constraint firstItem="cCc-G4-ZaX" firstAttribute="top" secondItem="HT9-er-Fas" secondAttribute="bottom" constant="13" id="ClT-Ta-JYX"/>
-                            <constraint firstItem="HT9-er-Fas" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="HYI-io-Vht"/>
-                            <constraint firstItem="5HY-TD-V3A" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="LYb-G6-LjH"/>
+                            <constraint firstItem="uOV-63-8gk" firstAttribute="centerY" secondItem="ZtH-G7-hs9" secondAttribute="centerY" id="8GX-3S-2Mz"/>
+                            <constraint firstItem="MaI-ZJ-hNy" firstAttribute="centerY" secondItem="1Bi-Pw-rdP" secondAttribute="centerY" id="LRx-al-RBt"/>
+                            <constraint firstItem="MaI-ZJ-hNy" firstAttribute="top" secondItem="uOV-63-8gk" secondAttribute="bottom" constant="15" id="OD7-PW-C14"/>
+                            <constraint firstItem="RTJ-Xr-KX5" firstAttribute="top" secondItem="MaI-ZJ-hNy" secondAttribute="bottom" constant="56" id="VoY-JL-HQ6"/>
+                            <constraint firstItem="45f-SA-Y5p" firstAttribute="centerY" secondItem="Qjq-wD-V8T" secondAttribute="centerY" id="XGR-wR-Dc4"/>
                             <constraint firstItem="1Bi-Pw-rdP" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="XoR-WX-Dwf"/>
-                            <constraint firstItem="HT9-er-Fas" firstAttribute="top" secondItem="5HY-TD-V3A" secondAttribute="bottom" constant="14" id="YGG-UQ-PIx"/>
-                            <constraint firstItem="cCc-G4-ZaX" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="YqW-v8-g4p"/>
-                            <constraint firstItem="RTJ-Xr-KX5" firstAttribute="top" secondItem="cCc-G4-ZaX" secondAttribute="bottom" constant="54" id="Zrm-ID-1ee"/>
-                            <constraint firstItem="1Bi-Pw-rdP" firstAttribute="centerY" secondItem="cCc-G4-ZaX" secondAttribute="centerY" id="bc3-Z7-b9B"/>
+                            <constraint firstItem="MaI-ZJ-hNy" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="cPv-FY-8p6"/>
+                            <constraint firstItem="Qjq-wD-V8T" firstAttribute="top" secondItem="9k6-gp-dUS" secondAttribute="bottom" constant="31" id="g3H-Kz-skO"/>
                             <constraint firstItem="9k6-gp-dUS" firstAttribute="centerX" secondItem="ZtH-G7-hs9" secondAttribute="centerX" id="h8h-WQ-Scm"/>
-                            <constraint firstItem="45f-SA-Y5p" firstAttribute="centerY" secondItem="5HY-TD-V3A" secondAttribute="centerY" id="lYw-Ck-y2e"/>
+                            <constraint firstItem="uOV-63-8gk" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="kJy-LG-Dcl"/>
+                            <constraint firstItem="uOV-63-8gk" firstAttribute="centerY" secondItem="CgC-Hi-oG8" secondAttribute="centerY" id="o0W-Mw-szw"/>
+                            <constraint firstItem="Qjq-wD-V8T" firstAttribute="trailing" secondItem="9k6-gp-dUS" secondAttribute="trailing" id="rvC-sj-OLK"/>
                             <constraint firstItem="45f-SA-Y5p" firstAttribute="leading" secondItem="9k6-gp-dUS" secondAttribute="leading" id="sf8-F1-YMV"/>
-                            <constraint firstItem="CgC-Hi-oG8" firstAttribute="centerY" secondItem="HT9-er-Fas" secondAttribute="centerY" id="u5L-S7-Ved"/>
-                            <constraint firstItem="HT9-er-Fas" firstAttribute="centerY" secondItem="ZtH-G7-hs9" secondAttribute="centerY" id="wdR-39-G2c"/>
+                            <constraint firstItem="uOV-63-8gk" firstAttribute="top" secondItem="Qjq-wD-V8T" secondAttribute="bottom" constant="18" id="taz-oa-fJW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progress0" destination="5HY-TD-V3A" id="Mbq-CF-LS7"/>
-                        <outlet property="progress1" destination="HT9-er-Fas" id="Qw5-GI-knK"/>
-                        <outlet property="progress2" destination="cCc-G4-ZaX" id="BdR-Sx-EEG"/>
+                        <outlet property="slider0" destination="Qjq-wD-V8T" id="Und-KV-dGF"/>
+                        <outlet property="slider1" destination="uOV-63-8gk" id="KuC-Aa-zfI"/>
+                        <outlet property="slider2" destination="MaI-ZJ-hNy" id="zp7-Oq-ITg"/>
                     </connections>
                 </viewController>
                 <customObject id="Esd-Cs-Hh4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -645,7 +660,7 @@ Anyway, what is your name exactly?</string>
                                 </textFieldCell>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-nf-Klz">
-                                <rect key="frame" x="-95" y="-98" width="201" height="601"/>
+                                <rect key="frame" x="-94" y="-98" width="200" height="601"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="s62-xw-94a"/>
                                     <constraint firstAttribute="height" constant="600" id="yon-gL-0HW"/>

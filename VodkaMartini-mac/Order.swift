@@ -12,9 +12,10 @@ class Order {
     static var currentOrder: Order?
     
     var bartenderName: String?
-    var resultMix: [Float] = [0,0,0,0]
     
     var customerName: String?
-    var stemFilePath: String?
-    var orderMix: [Float] = [0,0,0,0]
+    var stemFilePath: URL?
+    var orderMix: [Float]?
+    
+    var resultMix: [Float]?
 }
