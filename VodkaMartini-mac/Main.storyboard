@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="8AZ-3R-PZ7">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
@@ -957,6 +957,16 @@ Total: </string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4p-yu-J5n">
+                                <rect key="frame" x="105" y="483" width="399" height="96"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="NBo-fF-Qex">
+                                    <font key="font" metaFont="system" size="40"/>
+                                    <string key="title">CUSTOMER's order 
+mixed by BARTENDER</string>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-aU-By3">
                                 <rect key="frame" x="322" y="172" width="254" height="288"/>
                                 <constraints>
@@ -974,21 +984,23 @@ Total: </string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4p-yu-J5n">
-                                <rect key="frame" x="105" y="483" width="399" height="96"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="NBo-fF-Qex">
-                                    <font key="font" metaFont="system" size="40"/>
-                                    <string key="title">CUSTOMER's order 
-mixed by BARTENDER</string>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmy-cT-KaU">
+                                <rect key="frame" x="264" y="96" width="103" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start over." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K38-aE-29z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="H95-u6-0ed" kind="custom" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="7Cd-S2-n7j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="OlR-MF-hhU" firstAttribute="trailing" secondItem="AKh-Wt-cvB" secondAttribute="centerX" id="4Sg-gW-eAm"/>
+                            <constraint firstAttribute="bottom" secondItem="mmy-cT-KaU" secondAttribute="bottom" constant="103" id="6i8-b5-mZ2"/>
                             <constraint firstItem="OlR-MF-hhU" firstAttribute="centerY" secondItem="AKh-Wt-cvB" secondAttribute="centerY" id="6qH-ec-LOy"/>
                             <constraint firstItem="PAn-aU-By3" firstAttribute="bottom" secondItem="OlR-MF-hhU" secondAttribute="bottom" id="Hjn-nQ-7YY"/>
+                            <constraint firstItem="mmy-cT-KaU" firstAttribute="centerX" secondItem="AKh-Wt-cvB" secondAttribute="centerX" id="Rw7-Yx-1Gc"/>
                             <constraint firstItem="OlR-MF-hhU" firstAttribute="top" secondItem="S4p-yu-J5n" secondAttribute="bottom" constant="23" id="Uky-E9-Ir6"/>
                             <constraint firstItem="S4p-yu-J5n" firstAttribute="leading" secondItem="OlR-MF-hhU" secondAttribute="leading" id="WUW-78-487"/>
                             <constraint firstItem="PAn-aU-By3" firstAttribute="top" secondItem="OlR-MF-hhU" secondAttribute="top" id="cCZ-Ow-vJP"/>
@@ -1012,4 +1024,7 @@ mixed by BARTENDER</string>
         <image name="whichJB-2" width="256" height="768"/>
         <image name="whichJB-3" width="256" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Svu-Nb-D2p"/>
+    </inferredMetricsTieBreakers>
 </document>
