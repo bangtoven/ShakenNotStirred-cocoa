@@ -11,10 +11,12 @@ import Cocoa
 class CalibrateViewController: NSViewController, ArduinoInterfaceDelegate {
 
     @IBOutlet weak var glassView: GlassView!
+    @IBOutlet weak var nextButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ArduinoInterface.sharedInstance.delegate = self
+        nextButton.isEnabled = false
     }
     
     func arduinoInterface(ai: ArduinoInterface, newState: HolderState) {
@@ -26,6 +28,8 @@ class CalibrateViewController: NSViewController, ArduinoInterfaceDelegate {
         weight -= 100
         if weight < 0 {
             weight = 50
+        } else if weight > 300 {
+            nextButton.isEnabled = true
         }
         glassView.alphaValue = weight / 500
     }

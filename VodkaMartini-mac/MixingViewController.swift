@@ -48,15 +48,19 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
                 let v = Order.current.orderMix[i]
                 StemPlayer.shared?.setVolume(v, forTrack: i)
             }
-            sender.stringValue = "Back to my mix."
+            sender.title = "Back to my mix."
         } else {
-            sender.stringValue = "Play the order again."
+            sender.title = "Play the order again."
         }
     }
 
     var zeroWeight = 0
     @IBAction func calibrateAction(_ sender: NSButton) {
         self.zeroWeight = Int(ArduinoInterface.sharedInstance.weight)
+        for i in 0..<3 {
+            StemPlayer.shared?.setVolume(0, forTrack: i)
+            self.sliders[i].floatValue = 0
+        }
         self.mixAmount = [0,0,0]
     }
     

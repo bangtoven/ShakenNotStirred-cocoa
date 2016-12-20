@@ -16,8 +16,10 @@ class FileSelectViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.playerView.controlsStyle = .none
+//        self.playerView.showsFullScreenToggleButton = true
         self.playerView.player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "vodkamartini-video", ofType: "mov")!))
-        self.playerView.player?.play()
+//        self.playerView.player?.play()
     }
     
     @IBAction func makeAnOrder(_ sender: NSButton) {

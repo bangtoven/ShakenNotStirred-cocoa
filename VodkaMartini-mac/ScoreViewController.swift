@@ -19,14 +19,6 @@ class ScoreViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let r = Order()
-        r.bartenderName = "Sexy하게"
-        r.customerName = "qkdwjdgh!"
-        r.orderMix = [1, 0.9, 0.2]
-        r.resultMix = [0.9, 0.3, 0.5]
-        r.totalTime = 100
-        Order.current = r
-        
         var str = namesLabel.stringValue
         if let b = Order.current.bartenderName {
             str = str.replacingOccurrences(of: "BARTENDER", with: b)

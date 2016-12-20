@@ -167,7 +167,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="VodkaMartini" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1313" y="64"/>
+            <point key="canvasLocation" x="-1492" y="-461"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -180,12 +180,47 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="H95-u6-0ed" kind="relationship" relationship="window.shadowedContentViewController" id="Svu-Nb-D2p"/>
+                        <segue destination="y6y-CL-CXg" kind="relationship" relationship="window.shadowedContentViewController" id="aiw-U4-2vX"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1312" y="283"/>
+            <point key="canvasLocation" x="-1461" y="-230"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="C2A-cA-0Ds">
+            <objects>
+                <viewController id="y6y-CL-CXg" sceneMemberID="viewController">
+                    <view key="view" id="Vfr-j4-e2E">
+                        <rect key="frame" x="0.0" y="0.0" width="928" height="628"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5hV-H4-Cpy">
+                                <rect key="frame" x="64" y="31" width="800" height="567"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="poster" id="bKh-Xt-iA9"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MPq-e5-Cop">
+                                <rect key="frame" x="429" y="-7" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G0i-yI-2kd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="H95-u6-0ed" kind="custom" identifier="" customClass="ReplaceSegue" customModule="VodkaMartini" customModuleProvider="target" id="yBN-an-lkZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MPq-e5-Cop" firstAttribute="top" secondItem="5hV-H4-Cpy" secondAttribute="bottom" constant="10" id="F7q-FG-Ouc"/>
+                            <constraint firstItem="5hV-H4-Cpy" firstAttribute="centerX" secondItem="Vfr-j4-e2E" secondAttribute="centerX" id="Nog-xX-ll2"/>
+                            <constraint firstItem="MPq-e5-Cop" firstAttribute="centerX" secondItem="Vfr-j4-e2E" secondAttribute="centerX" id="gVw-ez-Pnq"/>
+                            <constraint firstItem="5hV-H4-Cpy" firstAttribute="centerY" secondItem="Vfr-j4-e2E" secondAttribute="centerY" id="vbr-Eh-8wc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="ysw-Vt-GqE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="-340"/>
         </scene>
         <!--Bartender Name View Controller-->
         <scene sceneID="Yet-yl-Q58">
@@ -255,23 +290,18 @@ Tell us your name.</string>
                         <rect key="frame" x="0.0" y="0.0" width="450" height="485"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-aR-leJ">
-                                <rect key="frame" x="-95" y="63" width="640" height="360"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="640" id="NjY-ce-Btz"/>
-                                    <constraint firstAttribute="height" constant="360" id="kDp-zI-0XB"/>
-                                </constraints>
-                            </avPlayerView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N10-Ne-8yt">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N10-Ne-8yt">
                                 <rect key="frame" x="50" y="431" width="350" height="36"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Vodka martini, as always?" id="gsP-Jh-x0y">
                                     <font key="font" metaFont="system" size="30"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7od-7L-7dm">
-                                <rect key="frame" x="163" y="15" width="125" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7od-7L-7dm">
+                                <rect key="frame" x="163" y="22" width="125" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Start an order" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YSM-UI-e8o">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -280,15 +310,11 @@ Tell us your name.</string>
                                     <action selector="makeAnOrder:" target="efP-ik-3W4" id="MEf-WO-PkW"/>
                                 </connections>
                             </button>
+                            <avPlayerView autoresizesSubviews="NO" fixedFrame="YES" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-aR-leJ">
+                                <rect key="frame" x="22" y="70" width="407" height="342"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </avPlayerView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="centerY" secondItem="nQO-Zl-BWx" secondAttribute="centerY" id="7Fk-RT-EYe"/>
-                            <constraint firstItem="7od-7L-7dm" firstAttribute="centerX" secondItem="0Bo-aR-leJ" secondAttribute="centerX" id="KqZ-cf-R5J"/>
-                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="top" secondItem="N10-Ne-8yt" secondAttribute="bottom" constant="8" id="M13-J9-RyJ"/>
-                            <constraint firstItem="0Bo-aR-leJ" firstAttribute="centerX" secondItem="nQO-Zl-BWx" secondAttribute="centerX" id="MDC-ue-YTQ"/>
-                            <constraint firstItem="7od-7L-7dm" firstAttribute="top" secondItem="0Bo-aR-leJ" secondAttribute="bottom" constant="20" id="Yo9-Ll-CAe"/>
-                            <constraint firstItem="N10-Ne-8yt" firstAttribute="centerX" secondItem="nQO-Zl-BWx" secondAttribute="centerX" id="bo5-0P-rem"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playerView" destination="0Bo-aR-leJ" id="MDp-pf-kNc"/>
@@ -512,8 +538,9 @@ and listend to how it sounds like.</string>
                                     <string key="title">Your mission is to make the MIX as your customers want.
 Remember they are fastidious about the vodka martini, 
 and some of them have licesnse to kill. 😱
-
-Now, pass this laptop to the customer and wait.</string>
+Now, pass this laptop to the customer and wait.
+(Blue instructions are for you. See you soon.)
+</string>
                                     <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -884,6 +911,7 @@ as agent CUSTOMER's order.</string>
                     </view>
                     <connections>
                         <outlet property="glassView" destination="PA5-dh-LfF" id="dwd-b4-9YA"/>
+                        <outlet property="nextButton" destination="iWg-Zl-BaP" id="Abp-yr-YsY"/>
                     </connections>
                 </viewController>
                 <customObject id="aLv-JC-DXM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1031,12 +1059,13 @@ Total: </string>
     </scenes>
     <resources>
         <image name="clock" width="64" height="64"/>
+        <image name="poster" width="800" height="567"/>
         <image name="whichJB-0" width="256" height="768"/>
         <image name="whichJB-1" width="256" height="768"/>
         <image name="whichJB-2" width="256" height="768"/>
         <image name="whichJB-3" width="256" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Svu-Nb-D2p"/>
+        <segue reference="yBN-an-lkZ"/>
     </inferredMetricsTieBreakers>
 </document>
