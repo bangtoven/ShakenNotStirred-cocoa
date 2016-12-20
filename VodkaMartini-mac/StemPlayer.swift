@@ -16,7 +16,7 @@ class StemPlayer {
         if _shared != nil {
             return _shared
         } else {
-            let url = Order.currentOrder?.stemFilePath ?? URL(fileURLWithPath: Bundle.main.path(forResource: "master.stem", ofType: "mp4")!)
+            let url = Order.current.stemFilePath ?? URL(fileURLWithPath: Bundle.main.path(forResource: "master.stem", ofType: "mp4")!)
             _shared = StemPlayer(url: url)
             return _shared
         }

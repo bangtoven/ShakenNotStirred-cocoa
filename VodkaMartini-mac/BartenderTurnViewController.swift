@@ -16,10 +16,10 @@ class BartenderTurnViewController: NSViewController {
         super.viewDidLoad()
         
         var str = instructionTextField.stringValue
-        if let b = Order.currentOrder?.bartenderName {
+        if let b = Order.current.bartenderName {
             str = str.replacingOccurrences(of: "BARTENDER", with: b)
         }
-        if let c = Order.currentOrder?.customerName {
+        if let c = Order.current.customerName {
             str = str.replacingOccurrences(of: "CUSTOMER", with: c)
         }
         instructionTextField.stringValue = str

@@ -9,15 +9,14 @@
 import Foundation
 
 class Order {
-    static var currentOrder: Order?
+    static var current: Order!
     
-    var bartenderName: String?
+    var bartenderName: String!
     
-    var customerName: String?
-    var stemFilePath: URL?
-    var orderMix: [Float]?
+    var customerName: String!
+    var stemFilePath: URL!
+    var orderMix: [Float]!
     
-    var resultMix: [Float]?
-    
-    var totalTime: Int?
+    var resultMix: [Float]!
+    var totalTime: Int!
 }

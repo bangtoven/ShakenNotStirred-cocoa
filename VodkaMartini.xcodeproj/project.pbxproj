@@ -429,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B77B7730A01F2C3609D4F614 /* Pods-VodkaMartini-mac.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -446,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 088FAFFA2A66206BB1378A3A /* Pods-VodkaMartini-mac.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;

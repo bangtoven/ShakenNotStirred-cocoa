@@ -37,7 +37,7 @@ class FinishOrderViewController: NSViewController, SliderAppInterfaceDelegate {
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        Order.currentOrder?.orderMix = sliders.map({ $0.floatValue/100 })
+        Order.current.orderMix = sliders.map({ $0.floatValue/100 })
         SliderAppInterface.sharedInstance.delegate = nil
     }
     

@@ -29,6 +29,9 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
         
         ArduinoInterface.sharedInstance.delegate = self
         
+        StemPlayer.shared?.mute()
+        StemPlayer.shared?.setVolume(1.0, forTrack: 3)
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (t) in
             self.timeCount += 1
             let seconds = self.timeCount % 60
@@ -42,8 +45,8 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
         playMyMixing = !playMyMixing
         if playMyMixing == false {
             for i in 0..<2 {
-                let v = Order.currentOrder?.orderMix?[i]
-                StemPlayer.shared?.setVolume(v!, forTrack: i)
+                let v = Order.current.orderMix[i]
+                StemPlayer.shared?.setVolume(v, forTrack: i)
             }
             sender.stringValue = "Back to my mix."
         } else {
@@ -59,8 +62,8 @@ class MixingViewController: NSViewController, ArduinoInterfaceDelegate {
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         self.timer.invalidate()
-        Order.currentOrder?.resultMix = mixAmount.map( { Float($0)/Float(THRESHOLD)} )
-        Order.currentOrder?.totalTime = timeCount
+        Order.current.resultMix = mixAmount.map( { Float($0)/Float(THRESHOLD)} )
+        Order.current.totalTime = timeCount
     }
     
     var currentState = HolderState.All
