@@ -34,6 +34,7 @@ class StemPlayer {
                 do {
                     let json = try JSONSerialization.jsonObject(with: metaItem.value as! Data, options: .allowFragments) as! [String:Any]
                     self.stemData = json["stems"] as? [[String:String]]
+                    self.stemData?.remove(at: 0)
                 } catch {
                     print(error)
                 }
@@ -45,8 +46,6 @@ class StemPlayer {
             let composition = AVMutableComposition()
             let track = composition.addMutableTrack(withMediaType: AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
             do {
-//                var duration = asset.duration
-//                duration.value -= 880
                 try track.insertTimeRange(CMTimeRange(start: kCMTimeZero, end: asset.duration), of: asset.tracks[i+1], at: kCMTimeZero)
             } catch {
                 

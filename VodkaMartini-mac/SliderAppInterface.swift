@@ -22,7 +22,7 @@ class SliderAppInterface {
         self.server = HttpServer()
         
 //        server["stems"] = { request in
-//            return HttpResponse.ok(.json(self.stemData as AnyObject))
+//            return HttpResponse.ok(.json(StemPlayer.shared?.stemData as AnyObject))
 //        }
         
 //        server["files"] = { request in

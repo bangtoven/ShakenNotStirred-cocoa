@@ -139,10 +139,10 @@
 		73167DA81E08CDEC00840E86 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */,
+				73167DAC1E08CE9A00840E86 /* Order.swift */,
 				73167D901E08C6A000840E86 /* StemPlayer.swift */,
 				73167D911E08C6A000840E86 /* ArduinoInterface.swift */,
-				73167DAC1E08CE9A00840E86 /* Order.swift */,
+				73167D8F1E08C6A000840E86 /* SliderAppInterface.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";

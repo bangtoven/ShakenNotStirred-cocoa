@@ -34,7 +34,7 @@ class ArduinoInterface: NSObject, ORSSerialPortDelegate {
         
         setbuf(stdout, nil)
         
-        self.serialPort = ORSSerialPort(path: "/dev/cu.usbmodem1421")
+        self.serialPort = ORSSerialPort(path: "/dev/cu.usbmodem1411")
         self.serialPort?.baudRate = 9600
         self.serialPort?.delegate = self
         
